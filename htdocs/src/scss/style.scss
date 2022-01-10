@@ -17,7 +17,8 @@
 @import '_mixin/u-contentCenter'; // content width center
 @import '_mixin/u-arrow'; // arrow style
 @import '_mixin/u-formParts'; // form Parts style
-@import '_mixin/u-secTitle'; // title style
+@import '_mixin/u-title'; // title style
+@import '_mixin/u-text'; // text style
 @import '_mixin/u-articleText'; // article text style
 @import '_mixin/u-bnr'; // banner style
 @import '_mixin/u-wysiwygArea'; // WYSIWYG editor style
@@ -30,7 +31,7 @@
 
 @import 'common'; // common style (<body>, PC・SP toggle)
 
-@import '_pages/home-fv'; // honme fv
+@import '_pages/home__fv'; // honme fv
 @import '_pages/home-portfolio'; // honme portfolio
 @import '_pages/home-profile'; // honme profile
 @import '_pages/home-career'; // honme career

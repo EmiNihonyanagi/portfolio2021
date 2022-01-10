@@ -11,8 +11,10 @@
             {title: "TAG", link: "tag"},
         ];
 
-.home-portfolio__area
-    .home-portfolio__areaItem: each item in portfolio_item
-        figure.home-portfolio__areaThum
-            img(src=`${relativePath}/_assets/images/top/portfolio_${item.link}.jpg`, alt=`${item.title}`)
-        a.home-portfolio__areaLink(href=`${relativePath}/`+`${item.link}`)= item.title
+.home__portfolio-area
+    each item in portfolio_item
+        a.home__portfolio-areaItem(href=`${relativePath}/`+`${item.link}` ontouchstart="")
+            figure.home__portfolio-areaThum
+                //- img(src=`${relativePath}/_assets/images/top/portfolio_${item.link}.jpg`, alt=`${item.title}`)
+                img(src="https://placehold.jp/300x400.png", alt="")
+            .home__portfolio-areaLink !{item.title}

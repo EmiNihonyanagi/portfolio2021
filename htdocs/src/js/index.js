@@ -10,9 +10,11 @@ import { polyfill } from './modules/_polyfill';
 import { smoothScroll } from './modules/_smoothScroll';
 // import { stickyHeader } from './modules/_stickyHeader';
 // import { swiperSlider } from './modules/_swiperSlider';
-// import { wowEffects } from './modules/_wowEffects';
+import { wowEffects } from './modules/_wowEffects';
 // import { smoothScrollVs } from './modules/_smoothScrollVs';
 // import { sampleArray } from './modules/_sampleArray';
+// import { locomotive_scroll } from './modules/_locomotive_scroll';
+import { scrollTrigger } from './modules/_scrollTrigger';
 
 $(function(){
   polyfill();
@@ -21,12 +23,14 @@ $(function(){
   // sampleArray();
   // viewport();
   // btnClickFunc();
-  // wowEffects();
+  wowEffects();
   // accordion();
   // swiperSlider();
   // customSelect();
   // backToTop();
   // modal();
+  // locomotive_scroll();
+  scrollTrigger();
 });
 
 // $(window).on('load resize scroll', function () {

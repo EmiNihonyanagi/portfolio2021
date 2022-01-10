@@ -1,6 +1,26 @@
 /*====================================================================
-home-profile
+home__profile
 ====================================================================*/
-.home-profile {
+.home__profile {
+  &-container {
+    display: flex;
+  }
+  &-thum {
+    width: 45rem;
+    height: 45rem;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+  &-text {
+    max-width: calc(100% - 45rem);
+    padding-left: 5rem;
 
+  }
+  .main__title {
+    text-align: right;
+  }
 }

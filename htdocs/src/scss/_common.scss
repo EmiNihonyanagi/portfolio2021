@@ -17,6 +17,10 @@ html {
 body {
   @include fontFeature;
   -webkit-print-color-adjust: exact;
+  font-family: $Roboto;
+  font-size: 2rem;
+  color: $black;
+  font-weight: 400;
 
   // Liquid
   @include u-mqMax() {
@@ -95,16 +99,19 @@ PC/SP
 /*-----------------------------------------------
 main
 ------------------------------------------------*/
-.siteContent {
-  min-height: calc(100vh - #{$headerHeightPC + $headerHeightPC});
-  padding-top: $headerHeightPC;
+.container {
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+}
 
-  .is_login_user & {
+.main {
+  &__title {
+    @include u-title;
   }
-
-  // SP
-  @include u-mqMax($maxW: $windowSP) {
-    min-height: calc(100vh - #{$footerHeightSP});
-    padding-top: $headerHeightSP;
+  &__subTitle {
+    font-size: 6rem;
+    display: block;
+    text-align: right;
   }
 }

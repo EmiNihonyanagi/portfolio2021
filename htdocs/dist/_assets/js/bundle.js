@@ -347,7 +347,7 @@ var toObject = __webpack_require__(17);
 
 var hasOwnProperty = {}.hasOwnProperty;
 
-module.exports = function hasOwn(it, key) {
+module.exports = Object.hasOwn || function hasOwn(it, key) {
   return hasOwnProperty.call(toObject(it), key);
 };
 
@@ -524,7 +524,7 @@ var store = __webpack_require__(26);
 
 var functionToString = Function.toString;
 
-// this helper broken in `3.4.1-3.4.4`, so we can't use `shared` helper
+// this helper broken in `core-js@3.4.1-3.4.4`, so we can't use `shared` helper
 if (typeof store.inspectSource != 'function') {
   store.inspectSource = function (it) {
     return functionToString.call(it);
@@ -656,7 +656,7 @@ var store = __webpack_require__(26);
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.12.1',
+  version: '3.15.2',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2021 Denis Pushkarev (zloirock.ru)'
 });
@@ -1141,8 +1141,10 @@ var fails = __webpack_require__(7);
 
 // eslint-disable-next-line es/no-object-getownpropertysymbols -- required for testing
 module.exports = !!Object.getOwnPropertySymbols && !fails(function () {
-  return !String(Symbol()) ||
-    // Chrome 38 Symbol has incorrect toString conversion
+  var symbol = Symbol();
+  // Chrome 38 Symbol has incorrect toString conversion
+  // `get-own-property-symbols` polyfill symbols converted to object are not Symbol instances
+  return !String(symbol) || !(Object(symbol) instanceof Symbol) ||
     // Chrome 38-40 symbols are not inherited from DOM collections prototypes to instances
     !Symbol.sham && V8_VERSION && V8_VERSION < 41;
 });
@@ -1385,6 +1387,105 @@ var smoothScroll = function smoothScroll() {
   });
 };
 
+/***/ }),
+/* 66 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "wowEffects": function() { return /* binding */ wowEffects; }
+/* harmony export */ });
+/* harmony import */ var core_js_modules_es_array_index_of_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67);
+/* harmony import */ var core_js_modules_es_array_index_of_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_index_of_js__WEBPACK_IMPORTED_MODULE_0__);
+
+var wowEffects = function wowEffects() {
+  var ua = window.navigator.userAgent;
+
+  var wowInit = function wowInit() {
+    var wow = new WOW({
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 100,
+      mobile: true,
+      live: true,
+      callback: function callback(box) {},
+      scrollContainer: null
+    });
+    wow.init();
+  }; // IE Browser
+
+
+  if (ua.indexOf('Trident') != -1 || ua.indexOf('MSIE') != -1) {
+    $(window).on('load', function (e) {
+      wowInit();
+    });
+  } else {
+    wowInit();
+  }
+};
+
+/***/ }),
+/* 67 */
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+/* eslint-disable es/no-array-prototype-indexof -- required for testing */
+var $ = __webpack_require__(3);
+var $indexOf = __webpack_require__(40).indexOf;
+var arrayMethodIsStrict = __webpack_require__(58);
+
+var nativeIndexOf = [].indexOf;
+
+var NEGATIVE_ZERO = !!nativeIndexOf && 1 / [1].indexOf(1, -0) < 0;
+var STRICT_METHOD = arrayMethodIsStrict('indexOf');
+
+// `Array.prototype.indexOf` method
+// https://tc39.es/ecma262/#sec-array.prototype.indexof
+$({ target: 'Array', proto: true, forced: NEGATIVE_ZERO || !STRICT_METHOD }, {
+  indexOf: function indexOf(searchElement /* , fromIndex = 0 */) {
+    return NEGATIVE_ZERO
+      // convert -0 to +0
+      ? nativeIndexOf.apply(this, arguments) || 0
+      : $indexOf(this, searchElement, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+/* 68 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "scrollTrigger": function() { return /* binding */ scrollTrigger; }
+/* harmony export */ });
+var scrollTrigger = function scrollTrigger() {
+  //   gsap.set('.main', { autoAlpha: 0 }); //初期状態としてopacity: 0;とvisibility: hidden;が指定される
+  //   gsap.to('.main', { //アニメーションしたい要素を指定
+  //     x: 100, //横に800px動かす
+  //     autoAlpha: 1, //opacity: 1;とvisibility：visible;がつく
+  //   scrollTrigger: {
+  //     trigger: '.home-career',//アニメーションが始まるトリガーとなる要素
+  //     start: 'top center', //アニメーションが始まる位置を指定
+  //   }
+  // });
+  var el = document.querySelector('.js-horizontalArea__item');
+  gsap.to(el, {
+    xPercent: -200,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.js-horizontalArea',
+      start: 'top top',
+      end: "+=".concat(el.clientWidth),
+      scrub: true,
+      pin: true
+    }
+  });
+};
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -1473,6 +1574,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
+/* harmony import */ var _modules_wowEffects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(66);
+/* harmony import */ var _modules_scrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68);
  // import { viewport } from './modules/_viewport';
 // import { btnClickFunc } from './modules/_btnClickFunc';
 // import { getSearchParams } from './modules/_getSearchParams';
@@ -1484,9 +1587,11 @@ __webpack_require__.r(__webpack_exports__);
 
  // import { stickyHeader } from './modules/_stickyHeader';
 // import { swiperSlider } from './modules/_swiperSlider';
-// import { wowEffects } from './modules/_wowEffects';
-// import { smoothScrollVs } from './modules/_smoothScrollVs';
+
+ // import { smoothScrollVs } from './modules/_smoothScrollVs';
 // import { sampleArray } from './modules/_sampleArray';
+// import { locomotive_scroll } from './modules/_locomotive_scroll';
+
 
 $(function () {
   (0,_modules_polyfill__WEBPACK_IMPORTED_MODULE_0__.polyfill)();
@@ -1494,12 +1599,15 @@ $(function () {
   // sampleArray();
   // viewport();
   // btnClickFunc();
-  // wowEffects();
-  // accordion();
+
+  (0,_modules_wowEffects__WEBPACK_IMPORTED_MODULE_2__.wowEffects)(); // accordion();
   // swiperSlider();
   // customSelect();
   // backToTop();
   // modal();
+  // locomotive_scroll();
+
+  (0,_modules_scrollTrigger__WEBPACK_IMPORTED_MODULE_3__.scrollTrigger)();
 }); // $(window).on('load resize scroll', function () {
 //   checkView();
 //   stickyHeader();
