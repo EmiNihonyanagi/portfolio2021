@@ -1,0 +1,18 @@
+-
+    let portfolio_item = [
+            {title: "三菱UFJファクター", link: "ufj"},
+            {title: "出前館 採用サイト", link: "demaecan"},
+            {title: "築地本願寺 他言語", link: "thukiji"},
+            {title: "トラストコミュニケーション", link: "tc"},
+            {title: "milbon STYLIST CLUB", link: "milbon"},
+            {title: "日本大学商学部", link: "nichidai"},
+            {title: "アスリートファミリープロジェクト", link: "afp"},
+            {title: "DJ Hostel Ginza", link: "djhotel"},
+            {title: "TAG", link: "tag"},
+        ];
+
+.home-portfolio__area
+    .home-portfolio__areaItem: each item in portfolio_item
+        figure.home-portfolio__areaThum
+            img(src=`${relativePath}/_assets/images/top/portfolio_${item.link}.jpg`, alt=`${item.title}`)
+        a.home-portfolio__areaLink(href=`${relativePath}/`+`${item.link}`)= item.title

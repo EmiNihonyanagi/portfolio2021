@@ -1,0 +1,46 @@
+-
+    let tool_item01 = [
+            {name: 'Photoshop'},
+            {name: 'Illustrator'},
+            {name: 'InDesign'},
+            {name: 'XD'},
+            {name: 'Sketch'},
+            {name: 'Figma'},
+        ];
+    let tool_item02 = [
+            {name: 'Zeplin'},
+            {name: 'Visual Studio Code '},
+            {name: 'Bitbucket'},
+            {name: 'SourceTree'},
+            {name: 'CodePen'},
+            {name: 'Local by Flywheel'},
+            {name: 'Gyazo'},
+            {name: 'MONJI'},
+        ];
+    let tool_item03 = [
+            {name: 'Excel'},
+            {name: 'Word'},
+            {name: 'PowerPoint'},
+            {name: 'Backlog'},
+            {name: 'ChatWork'},
+            {name: 'Slack'},
+            {name: 'Trello'},
+            {name: 'Asana'},
+        ];
+
+section.container
+    dl.home-tool__area
+        dt.home-tool__areaTitle デザインツール
+        -
+        each item in tool_item01
+            dd.home-tool__areaItem #{item.name}
+    dl.home-tool__area
+        dt.home-tool__areaTitle 制作ツール
+        -
+        each item in tool_item02
+            dd.home-tool__areaItem #{item.name}
+    dl.home-tool__area
+        dt.home-tool__areaTitle ビジネスツール
+        -
+        each item in tool_item03
+            dd.home-tool__areaItem #{item.name}

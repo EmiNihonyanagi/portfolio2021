@@ -1,0 +1,18 @@
+-
+    let career_item = [
+            {year: '2000<br>〜 2011', company: '' ,text: '販売員'},
+            {year: '2012', company: '株式会社<br>ECORE' ,text: '社内案件<br>Webデザイン<br>コーディング'},
+            {year: '2013', company: '株式会社<br>コムデ' ,text: '受託案件<br>コーディング'},
+            {year: '2014', company: 'フリーランス' ,text: '受託案件<br>Webコーディング<br>コーディング'},
+            {year: '2018', company: '株式会社<br>デジリード' ,text: '受託案件<br>コーディング'},
+            {year: '2019', company: '株式会社<br>コムデ' ,text: '受託案件<br>コーディング<br>プロジェクトマネージャー<br>ディレクション'},
+            {year: '2022', company: '株式会社<br>コムデ' ,text: '在籍中'},
+
+
+        ];
+section.container
+    ul.home-career__area
+        li.home-career__areaItem: each item in career_item
+            .home-career__areaYear !{item.year}
+                span.home-career__areaCompany !{item.company}
+            .home-career__areaText !{item.text}

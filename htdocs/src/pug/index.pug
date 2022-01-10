@@ -67,52 +67,35 @@ html(lang="ja")
         include ./_inc/_head.pug
 
 
-    body.topPage#top
+    body(class=`${currentPage}`)#top
         //- HEADER
-        include ./_inc/_siteHeader.pug
+        include ./_inc/_homeFv.pug
 
         //- MAIN CONTENT
         main.siteContent(role="main")
-            section.sec01
-                -
-                    const card = [
-                      {
-                        num: '01',
-                        link: '#top',
-                        title: 'h1_01',
-                        text: 'text_01',
-                      },
-                      {
-                        num: '02',
-                        link: '#top',
-                        title: 'h1_02',
-                        text: 'text_02',
-                      },
-                      {
-                        num: '03',
-                        link: '#top',
-                        title: 'h1_03',
-                        text: 'text_03',
-                      },
-                    ]
-                ul.cardList01
-                    each item, index in card
-                        li.cardList01__item
-                            a.cardList01__link(href=`${item.link}`)
-                                figure.cardList01__thumb
-                                    img.cardList01__img(src=`${relativePath}/_assets/images/sample/sample_img-${item.num}.jpg` alt="#")
-                                    figcaption.cardList01__caption
-                                h3.cardList01__title !{item.title}
-                                p.cardList01__desc !{item.text}
+            .home-portfolio
+                h2.main-title Portfolio
+                    span.main-subTitle 2015-2021
+                    include ./_inc/_homePortfolio.pug
 
-            section.sec02
-                ul.cardList02
-                    - for (var x = 0; x < 6; x++)
-                        li.cardList02__item
-                            a.cardList02__link(href="#")
-                                figure.cardList02__thumb
-                                    img.cardList01__img(src=`https://placehold.jp/300x300.png` alt="#")
-                                    figcaption.cardList02__caption Name
+            .home-profile
+                h2.main-title Profile
+                p
+                | 2012年より主に受託案件を中心に、Web制作会社、フリーランスにて制作経験を積む。<br>
+                | WordPressのカスタマイズ経験が豊富で、クライアントとの商談を交え、エンドクライアントにとってより運用しやすい構築を心がけております。<br>
+                | 教育担当や、国外の外注先への指示出しを多く経験し、確認作業の徹底に注力を注いでおります。
+
+            .home-career
+                h2.main-title Career
+                include ./_inc/_homeCareer.pug
+
+            .home-skill
+                h2.main-title Skill
+                include ./_inc/_homeSkill.pug
+
+            .home-tool
+                h2.main-title 使用ツール
+                include ./_inc/_homeTool.pug
 
         //- FOOTER
         include ./_inc/_siteFooter.pug

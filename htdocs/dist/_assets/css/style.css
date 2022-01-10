@@ -1,11 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
-@font-face {
-  font-family: 'YuMincho';
-  font-weight: normal;
-  src: url("../font/A-OTF-A1MinchoStd-Bold.otf");
-}
-
+@charset "UTF-8";
 /*!
  * Bootstrap Reboot v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -945,6 +938,12 @@ siteHeader
   top: 32px;
 }
 
+@media print {
+  .siteHeader {
+    position: absolute;
+  }
+}
+
 .siteHeader__innerArea {
   margin-left: auto;
   margin-right: auto;
@@ -1019,6 +1018,7 @@ body {
   -webkit-font-feature-settings: 'palt' 1;
      -moz-font-feature-settings: 'palt' 1;
           font-feature-settings: 'palt' 1;
+  -webkit-print-color-adjust: exact;
 }
 
 /*-----------------------------------------------
@@ -1116,4 +1116,28 @@ main
 /*====================================================================
 topPageFvSec
 ====================================================================*/
+/*====================================================================
+PRINT LAYOUT
+====================================================================*/
+@page {
+  size: A4 portrait;
+  /* 横の場合はlandscape */
+  margin: 0mm;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    word-break: break-all !important;
+  }
+  .u-printPages__next {
+    size: A4 landscape;
+    page-break-before: always;
+  }
+  .u-printPages__box {
+    -webkit-column-break-inside: avoid;
+       -moz-column-break-inside: avoid;
+            break-inside: avoid;
+  }
+}
 /*# sourceMappingURL=style.css.map */

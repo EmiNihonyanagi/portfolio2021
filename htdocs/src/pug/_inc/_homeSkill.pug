@@ -1,0 +1,19 @@
+-
+    let skill_item = [
+            {title: 'HTML', year: '9'},
+            {title: 'CSS', year: '9'},
+            {title: 'WordPress', year: '7'},
+            {title: 'JavaScript/jQuery', year: '8'},
+            {title: 'Pug', year: '4'},
+            {title: 'SCSS', year: '5'},
+            {title: 'Bootstrap', year: '4'},
+
+        ];
+section.container
+    ul.home-skill__area
+        li.home-skill__areaItem: each item in skill_item
+            .home-skill__areaTitle= item.title
+            .home-skill__areaYear
+                - for (var x = 0; x < item.year; x++)
+                    item.year ■
+                span.home-skill__areaYearText #{item.year} 年
