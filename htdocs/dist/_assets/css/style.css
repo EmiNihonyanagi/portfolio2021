@@ -1114,6 +1114,7 @@ main
   letter-spacing: 0.05em;
   line-height: 1;
   font-weight: 400;
+  margin-bottom: 10rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -1281,6 +1282,10 @@ home__portfolio
 /*====================================================================
 home__profile
 ====================================================================*/
+.home__profile {
+  padding: 10rem 0;
+}
+
 .home__profile-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1314,12 +1319,369 @@ home__profile
 /*====================================================================
 home__career
 ====================================================================*/
+.home__career {
+  position: relative;
+  background: rgba(202, 212, 227, 0.9);
+  padding: 10rem 0;
+}
+
+.home__career::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 32.5rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+}
+
+.home__career .main__title {
+  color: #ffffff;
+}
+
+.home__career-area {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.home__career-areaItem {
+  position: relative;
+  max-width: 21rem;
+  width: 100%;
+  padding: 5rem 1.5rem 0 1.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  -webkit-transition: all 0.6s ease-in-out 0s;
+  -o-transition: all 0.6s ease-in-out 0s;
+  -moz-transition: all 0.6s ease-in-out 0s;
+  transition: all 0.6s ease-in-out 0s;
+  -webkit-animation-name: fadeIn;
+     -moz-animation-name: fadeIn;
+       -o-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.is-animate .home__career-areaItem:nth-child(1) {
+  -webkit-animation-delay: 1.4s;
+     -moz-animation-delay: 1.4s;
+       -o-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.is-animate .home__career-areaItem:nth-child(2) {
+  -webkit-animation-delay: 1.8s;
+     -moz-animation-delay: 1.8s;
+       -o-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.is-animate .home__career-areaItem:nth-child(3) {
+  -webkit-animation-delay: 2.2s;
+     -moz-animation-delay: 2.2s;
+       -o-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.is-animate .home__career-areaItem:nth-child(4) {
+  -webkit-animation-delay: 2.6s;
+     -moz-animation-delay: 2.6s;
+       -o-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.is-animate .home__career-areaItem:nth-child(5) {
+  -webkit-animation-delay: 3s;
+     -moz-animation-delay: 3s;
+       -o-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.is-animate .home__career-areaItem:nth-child(6) {
+  -webkit-animation-delay: 3.4s;
+     -moz-animation-delay: 3.4s;
+       -o-animation-delay: 3.4s;
+          animation-delay: 3.4s;
+}
+
+.is-animate .home__career-areaItem:nth-child(7) {
+  -webkit-animation-delay: 3.8s;
+     -moz-animation-delay: 3.8s;
+       -o-animation-delay: 3.8s;
+          animation-delay: 3.8s;
+}
+
+.is-animate .home__career-areaItem:nth-child(8) {
+  -webkit-animation-delay: 4.2s;
+     -moz-animation-delay: 4.2s;
+       -o-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+.is-animate .home__career-areaItem:nth-child(9) {
+  -webkit-animation-delay: 4.6s;
+     -moz-animation-delay: 4.6s;
+       -o-animation-delay: 4.6s;
+          animation-delay: 4.6s;
+}
+
+.is-animate .home__career-areaItem:nth-child(10) {
+  -webkit-animation-delay: 5s;
+     -moz-animation-delay: 5s;
+       -o-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.home__career-areaItem::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.6);
+     -moz-box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.6);
+          box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.6);
+}
+
+.home__career-areaYear {
+  font-size: 3rem;
+  line-height: 1;
+  min-height: 12rem;
+}
+
+.home__career-areaCompany {
+  margin-top: 1rem;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
 /*====================================================================
 home__skill
 ====================================================================*/
+.home__skill {
+  padding: 10rem 0;
+}
+
+.home__skill-area {
+  padding-left: 0;
+  list-style: none;
+}
+
+.home__skill-areaItem {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.home__skill-areaTitle {
+  font-size: 3rem;
+  min-width: 26rem;
+}
+
+.home__skill span {
+  opacity: 0;
+  -webkit-transition: all 0.6s ease-in-out 0s;
+  -o-transition: all 0.6s ease-in-out 0s;
+  -moz-transition: all 0.6s ease-in-out 0s;
+  transition: all 0.6s ease-in-out 0s;
+  -webkit-animation-name: fadeIn;
+     -moz-animation-name: fadeIn;
+       -o-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 0.5s;
+     -moz-animation-duration: 0.5s;
+       -o-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.home__skill span:nth-child(1) {
+  -webkit-animation-delay: 1.2s;
+     -moz-animation-delay: 1.2s;
+       -o-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.home__skill span:nth-child(2) {
+  -webkit-animation-delay: 1.4s;
+     -moz-animation-delay: 1.4s;
+       -o-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.home__skill span:nth-child(3) {
+  -webkit-animation-delay: 1.6s;
+     -moz-animation-delay: 1.6s;
+       -o-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.home__skill span:nth-child(4) {
+  -webkit-animation-delay: 1.8s;
+     -moz-animation-delay: 1.8s;
+       -o-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.home__skill span:nth-child(5) {
+  -webkit-animation-delay: 2s;
+     -moz-animation-delay: 2s;
+       -o-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.home__skill span:nth-child(6) {
+  -webkit-animation-delay: 2.2s;
+     -moz-animation-delay: 2.2s;
+       -o-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.home__skill span:nth-child(7) {
+  -webkit-animation-delay: 2.4s;
+     -moz-animation-delay: 2.4s;
+       -o-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+.home__skill span:nth-child(8) {
+  -webkit-animation-delay: 2.6s;
+     -moz-animation-delay: 2.6s;
+       -o-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
+
+.home__skill span:nth-child(9) {
+  -webkit-animation-delay: 2.8s;
+     -moz-animation-delay: 2.8s;
+       -o-animation-delay: 2.8s;
+          animation-delay: 2.8s;
+}
+
+.home__skill span:nth-child(10) {
+  -webkit-animation-delay: 3s;
+     -moz-animation-delay: 3s;
+       -o-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.home__skill-areaYearBlock {
+  display: inline-block;
+  color: #EAEAEF;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.home__skill-areaYearBlock::before {
+  content: "";
+  width: 1.2em;
+  height: 1.5em;
+  background: #EAEAEF;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  z-index: 1;
+}
+
+.home__skill-areaYearText {
+  font-size: 1.4rem;
+  padding-left: 1rem;
+}
+
 /*====================================================================
 home__tool
 ====================================================================*/
+.home__tool {
+  padding: 10rem 0;
+}
+
+.home__tool .main__title {
+  margin-bottom: 0;
+}
+
+.home__tool-area {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.home__tool-areaTitle {
+  width: 100%;
+  font-size: 3rem;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  color: #B9B9B9;
+  font-weight: 400;
+}
+
+.home__tool-areaItem {
+  max-width: -webkit-calc(100% / 6);
+  max-width: -moz-calc(100% / 6);
+  max-width: calc(100% / 6);
+  width: 100%;
+  border: solid 1px #EAEAEF;
+  margin: -1px 0 0 -1px;
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
 /*====================================================================
 PRINT LAYOUT
 ====================================================================*/

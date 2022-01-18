@@ -22,4 +22,6 @@ export const scrollTrigger = () => {
       pin: true,
     },
   });
+
+
 };

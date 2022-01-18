@@ -11,7 +11,7 @@
             {title: "TAG", link: "tag"},
         ];
 
-.home__portfolio-area
+.home__portfolio-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
     each item in portfolio_item
         a.home__portfolio-areaItem(href=`${relativePath}/`+`${item.link}` ontouchstart="")
             figure.home__portfolio-areaThum

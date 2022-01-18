@@ -15,6 +15,8 @@ import { wowEffects } from './modules/_wowEffects';
 // import { sampleArray } from './modules/_sampleArray';
 // import { locomotive_scroll } from './modules/_locomotive_scroll';
 import { scrollTrigger } from './modules/_scrollTrigger';
+import { scrollBlockAnime } from './modules/_scrollBlockAnime';
+
 
 $(function(){
   polyfill();
@@ -31,6 +33,7 @@ $(function(){
   // modal();
   // locomotive_scroll();
   scrollTrigger();
+  scrollBlockAnime();
 });
 
 // $(window).on('load resize scroll', function () {

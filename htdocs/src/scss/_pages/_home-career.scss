@@ -2,5 +2,113 @@
 home__career
 ====================================================================*/
 .home__career {
+  position: relative;
+  background: rgba(202, 212, 227, 0.9);
+  padding: 10rem 0;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 32.5rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $white;
+  }
+  .main__title {
+    color: $white;
+  }
 
+  &-area {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-areaItem {
+    position: relative;
+    max-width: 21rem;
+    width: 100%;
+    padding: 5rem 1.5rem 0 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $white;
+
+    opacity: 0;
+    @include u-trs;
+    animation-name:fadeIn;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    .is-animate & {
+      &:nth-child(1) {
+        animation-delay: 1.4s;
+      }
+      &:nth-child(2) {
+        animation-delay: 1.8s;
+      }
+      &:nth-child(3) {
+        animation-delay: 2.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 2.6s;
+      }
+      &:nth-child(5) {
+        animation-delay: 3s;
+      }
+      &:nth-child(6) {
+        animation-delay: 3.4s;
+      }
+      &:nth-child(7) {
+        animation-delay: 3.8s;
+      }
+      &:nth-child(8) {
+        animation-delay: 4.2s;
+      }
+      &:nth-child(9) {
+        animation-delay: 4.6s;
+      }
+      &:nth-child(10) {
+        animation-delay: 5s;
+      }
+    }
+
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      background: $white;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform:translateX(-50%);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      -webkit-transform:translateX(-50%);
+      -moz-transform:translateX(-50%);
+      -ms-transform:translateX(-50%);
+      -o-transform:translateX(-50%);
+      box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.6);
+    }
+
+  }
+  &-areaYear {
+    font-size: 3rem;
+    line-height: 1;
+    min-height: 12rem;
+
+  }
+  &-areaCompany {
+    margin-top: 1rem;
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1.4;
+
+  }
+  &-areaText {
+
+  }
 }

@@ -796,9 +796,7 @@ main
   letter-spacing: 0.05em;
   line-height: 1;
   font-weight: 400;
-  opacity: 0;
-  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s, opacity linear 0.7s;
-  transform: translate(0, 40px);
+  margin-bottom: 10rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -811,7 +809,6 @@ main
   font-size: 6rem;
   display: block;
   text-align: right;
-  transform: translate(0, 30px);
 }
 
 /*====================================================================
@@ -910,6 +907,10 @@ home__portfolio
 /*====================================================================
 home__profile
 ====================================================================*/
+.home__profile {
+  padding: 10rem 0;
+}
+
 .home__profile-container {
   display: flex;
 }
@@ -937,12 +938,210 @@ home__profile
 /*====================================================================
 home__career
 ====================================================================*/
+.home__career {
+  position: relative;
+  background: rgba(202, 212, 227, 0.9);
+  padding: 10rem 0;
+}
+
+.home__career::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 32.5rem;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+}
+
+.home__career .main__title {
+  color: #ffffff;
+}
+
+.home__career-area {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.home__career-areaItem {
+  position: relative;
+  max-width: 21rem;
+  width: 100%;
+  padding: 5rem 1.5rem 0 1.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.home__career-areaItem::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.6);
+}
+
+.home__career-areaYear {
+  font-size: 3rem;
+  line-height: 1;
+  min-height: 12rem;
+}
+
+.home__career-areaCompany {
+  margin-top: 1rem;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
 /*====================================================================
 home__skill
 ====================================================================*/
+.home__skill {
+  padding: 10rem 0;
+}
+
+.home__skill-area {
+  padding-left: 0;
+  list-style: none;
+}
+
+.home__skill-areaItem {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.home__skill-areaTitle {
+  font-size: 3rem;
+  min-width: 26rem;
+}
+
+.home__skill span {
+  opacity: 0;
+  transition: all 0.6s ease-in-out 0s;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.home__skill span:nth-child(1) {
+  animation-delay: 1.2s;
+}
+
+.home__skill span:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+.home__skill span:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+.home__skill span:nth-child(4) {
+  animation-delay: 1.8s;
+}
+
+.home__skill span:nth-child(5) {
+  animation-delay: 2s;
+}
+
+.home__skill span:nth-child(6) {
+  animation-delay: 2.2s;
+}
+
+.home__skill span:nth-child(7) {
+  animation-delay: 2.4s;
+}
+
+.home__skill span:nth-child(8) {
+  animation-delay: 2.6s;
+}
+
+.home__skill span:nth-child(9) {
+  animation-delay: 2.8s;
+}
+
+.home__skill span:nth-child(10) {
+  animation-delay: 3s;
+}
+
+.home__skill-areaYearBlock {
+  display: inline-block;
+  color: #EAEAEF;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.home__skill-areaYearBlock::before {
+  content: "";
+  width: 1.2em;
+  height: 1.5em;
+  background: #EAEAEF;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  z-index: 1;
+}
+
+.home__skill-areaYearText {
+  font-size: 1.4rem;
+  padding-left: 1rem;
+}
+
 /*====================================================================
 home__tool
 ====================================================================*/
+.home__tool {
+  padding: 10rem 0;
+}
+
+.home__tool .main__title {
+  margin-bottom: 0;
+}
+
+.home__tool-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home__tool-areaTitle {
+  width: 100%;
+  font-size: 3rem;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  color: #B9B9B9;
+  font-weight: 400;
+}
+
+.home__tool-areaItem {
+  max-width: calc(100% / 6);
+  width: 100%;
+  border: solid 1px #EAEAEF;
+  margin: -1px 0 0 -1px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
 /*====================================================================
 PRINT LAYOUT
 ====================================================================*/

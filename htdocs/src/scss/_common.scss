@@ -108,7 +108,9 @@ main
 .main {
   &__title {
     @include u-title;
+    margin-bottom: 10rem;
   }
+
   &__subTitle {
     font-size: 6rem;
     display: block;

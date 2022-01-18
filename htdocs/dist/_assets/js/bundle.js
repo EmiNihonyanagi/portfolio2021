@@ -1486,6 +1486,70 @@ var scrollTrigger = function scrollTrigger() {
   });
 };
 
+/***/ }),
+/* 69 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "scrollBlockAnime": function() { return /* binding */ scrollBlockAnime; }
+/* harmony export */ });
+var scrollBlockAnime = function scrollBlockAnime() {
+  // function EachTextAnimeControl() {
+  //   $('.eachTextAnime').each(function () {
+  //     var elemPos = $(this).offset().top - 50;
+  //     var scroll = $(window).scrollTop();
+  //     var windowHeight = $(window).height();
+  //     if (scroll >= elemPos - windowHeight) {
+  //       $(this).addClass("appeartext");
+  //     } else {
+  //       $(this).removeClass("appeartext");
+  //     }
+  //   });
+  // }
+  var myFunc = function myFunc() {
+    var target = document.getElementsByClassName('animate__target');
+    var position = Math.floor(window.innerHeight * .75);
+
+    for (var i = 0; i < target.length; i++) {
+      var offsetTop = Math.floor(target[i].getBoundingClientRect().top);
+
+      if (offsetTop < position) {
+        target[i].classList.add('is-animate');
+      }
+    }
+  }; //スクロールイベントリスナーに登録
+
+
+  window.addEventListener('scroll', myFunc, false); // 画面をスクロールをしたら動かしたい場合の記述
+  // $(window).scroll(function () {
+  //   EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
+  // });// ここまで画面をスクロールをしたら動かしたい場合の記述
+  // 画面が読み込まれたらすぐに動かしたい場合の記述
+  // $(window).on('load', function () {
+  //   //spanタグを追加する
+  //   var element = $(".eachTextAnime");
+  //   element.each(function () {
+  //     var text = $(this).text();
+  //     var textbox = "";
+  //     text.split('').forEach(function (t, i) {
+  //       if (t !== " ") {
+  //         if (i < 10) {
+  //           textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>';
+  //         } else {
+  //           var n = i / 10;
+  //           textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
+  //         }
+  //       } else {
+  //         textbox += t;
+  //       }
+  //     });
+  //     $(this).html(textbox);
+  //   });
+  //   EachTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
+};
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -1576,6 +1640,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(65);
 /* harmony import */ var _modules_wowEffects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(66);
 /* harmony import */ var _modules_scrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68);
+/* harmony import */ var _modules_scrollBlockAnime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(69);
  // import { viewport } from './modules/_viewport';
 // import { btnClickFunc } from './modules/_btnClickFunc';
 // import { getSearchParams } from './modules/_getSearchParams';
@@ -1593,6 +1658,7 @@ __webpack_require__.r(__webpack_exports__);
 // import { locomotive_scroll } from './modules/_locomotive_scroll';
 
 
+
 $(function () {
   (0,_modules_polyfill__WEBPACK_IMPORTED_MODULE_0__.polyfill)();
   (0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__.smoothScroll)(); // smoothScrollVs()
@@ -1608,6 +1674,7 @@ $(function () {
   // locomotive_scroll();
 
   (0,_modules_scrollTrigger__WEBPACK_IMPORTED_MODULE_3__.scrollTrigger)();
+  (0,_modules_scrollBlockAnime__WEBPACK_IMPORTED_MODULE_4__.scrollBlockAnime)();
 }); // $(window).on('load resize scroll', function () {
 //   checkView();
 //   stickyHeader();

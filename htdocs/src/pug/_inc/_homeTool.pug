@@ -9,7 +9,7 @@
         ];
     let tool_item02 = [
             {name: 'Zeplin'},
-            {name: 'Visual Studio Code '},
+            {name: 'Visual Studio<br>Code '},
             {name: 'Bitbucket'},
             {name: 'SourceTree'},
             {name: 'CodePen'},
@@ -28,19 +28,19 @@
             {name: 'Asana'},
         ];
 
-section.container
-    dl.home__tool-area
+section
+    dl.home__tool-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
         dt.home__tool-areaTitle デザインツール
         -
         each item in tool_item01
-            dd.home__tool-areaItem #{item.name}
-    dl.home__tool-area
+            dd.home__tool-areaItem !{item.name}
+    dl.home__tool-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
         dt.home__tool-areaTitle 制作ツール
         -
         each item in tool_item02
-            dd.home__tool-areaItem #{item.name}
-    dl.home__tool-area
+            dd.home__tool-areaItem !{item.name}
+    dl.home__tool-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
         dt.home__tool-areaTitle ビジネスツール
         -
         each item in tool_item03
-            dd.home__tool-areaItem #{item.name}
+            dd.home__tool-areaItem !{item.name}

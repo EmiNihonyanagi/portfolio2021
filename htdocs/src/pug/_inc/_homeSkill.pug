@@ -9,11 +9,12 @@
             {title: 'Bootstrap', year: '4'},
 
         ];
-section.container
+section
     ul.home__skill-area
-        li.home__skill-areaItem: each item in skill_item
-            .home__skill-areaTitle= item.title
-            .home__skill-areaYear
-                - for (var x = 0; x < item.year; x++)
-                    item.year ■
-                span.home__skill-areaYearText #{item.year} 年
+        each item in skill_item
+            li.home__skill-areaItem
+                .home__skill-areaTitle= item.title
+                .home__skill-areaYear
+                    - for (var x = 0; x < item.year; x++)
+                        span.home__skill-areaYearBlock.js-home__skill-areaYearBlock ■
+                    span.home__skill-areaYearText #{item.year} 年
