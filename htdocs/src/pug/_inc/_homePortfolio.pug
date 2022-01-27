@@ -1,8 +1,9 @@
 -
     let portfolio_item = [
-            {title: "三菱UFJファクター", link: "ufj"},
+            {title: "銀行 コーポレートサイト", link: "bank"},
+            {title: "ホテル コーポレートサイト", link: "hotel"},
             {title: "出前館 採用サイト", link: "demaecan"},
-            {title: "築地本願寺 他言語", link: "thukiji"},
+            {title: "築地本願寺 他言語サイト", link: "thukiji"},
             {title: "トラストコミュニケーション", link: "tc"},
             {title: "milbon STYLIST CLUB", link: "milbon"},
             {title: "日本大学商学部", link: "nichidai"},
@@ -11,10 +12,9 @@
             {title: "TAG", link: "tag"},
         ];
 
-.home__portfolio-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
+.home__portfolio-area.js-horizontalArea__item01.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
     each item in portfolio_item
         a.home__portfolio-areaItem(href=`${relativePath}/`+`${item.link}` ontouchstart="")
             figure.home__portfolio-areaThum
-                //- img(src=`${relativePath}/_assets/images/top/portfolio_${item.link}.jpg`, alt=`${item.title}`)
-                img(src="https://placehold.jp/300x400.png", alt="")
+                img(src=`${relativePath}/_assets/images/top/portfolio_${item.link}.png`, alt=`${item.title}`)
             .home__portfolio-areaLink !{item.title}

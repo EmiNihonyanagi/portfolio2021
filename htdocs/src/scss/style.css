@@ -766,8 +766,10 @@ siteHeader
 siteFooter
 ====================================================================*/
 .siteFooter {
-  background-color: #212121;
-  padding: 40px 0;
+  margin-top: 10rem;
+  background-color: rgba(125, 101, 39, 0.4);
+  padding: 4rem 0;
+  text-align: right;
 }
 
 /*====================================================================
@@ -776,9 +778,11 @@ loading
 .loading {
   width: 100%;
   height: 100vh;
+  min-height: 70rem;
   position: relative;
   z-index: 1000;
   background: #ffffff;
+  overflow: hidden;
   transition: all 0.6s ease-in-out 0s;
 }
 
@@ -988,6 +992,8 @@ home__fv
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 70rem;
+  overflow: hidden;
 }
 
 .home__fv-area {
@@ -1009,10 +1015,32 @@ home__fv
   font-size: 6rem;
 }
 
+.is-show .home__fv-areaName {
+  transition: all 0.6s ease-in-out 0s;
+  animation-name: fadeInUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.home__fv-areaLine {
+  opacity: 0;
+}
+
+.home__fv-areaLine.is-animate {
+  opacity: 1;
+}
+
 .home__fv-areaText {
   color: #7D6527;
   font-size: 3rem;
   text-align: right;
+}
+
+.is-show .home__fv-areaText {
+  transition: all 0.6s ease-in-out 0s;
+  animation-name: fadeInUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 /*====================================================================
@@ -1020,6 +1048,8 @@ home__portfolio
 ====================================================================*/
 .home__portfolio {
   position: relative;
+  padding-top: 10rem !important;
+  overflow: hidden;
 }
 
 .home__portfolio-container {
@@ -1035,10 +1065,15 @@ home__portfolio
 }
 
 .home__portfolio-areaItem {
-  display: inline-block;
-  max-width: 30rem;
-  width: calc(100% / 3);
+  display: block;
+  max-width: 100%;
+  width: 30rem;
   position: relative;
+  cursor: pointer;
+}
+
+.home__portfolio-areaThum img {
+  width: 100%;
 }
 
 .home__portfolio-areaLink {
@@ -1067,7 +1102,7 @@ home__portfolio
   }
 }
 
-.home__portfolio-areaLink:hover {
+.home__portfolio-areaItem:hover .home__portfolio-areaLink {
   opacity: 1;
   border-radius: 0;
   transition: all 0.6s ease-in-out 0s;
@@ -1098,6 +1133,13 @@ home__profile
   -o-border-radius: 50%;
 }
 
+.home__profile-thum img {
+  mask-image: url("../images/top/profile_mask.png");
+  -webkit-mask-image: url("../images/top/profile_mask.png");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
 .home__profile-text {
   max-width: calc(100% - 45rem);
   padding-left: 5rem;
@@ -1113,6 +1155,7 @@ home__career
 .home__career {
   position: relative;
   background: rgba(202, 212, 227, 0.9);
+  margin-top: 10rem;
   padding: 10rem 0;
 }
 

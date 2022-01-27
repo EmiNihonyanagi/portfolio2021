@@ -8,6 +8,7 @@ loading
   position: relative;
   z-index: 1000;
   background: $white;
+  overflow: hidden;
   @include u-trs;
   &.is-animate {
     z-index: -1;
@@ -33,23 +34,34 @@ loading
       animation-duration:1s;
       animation-fill-mode:forwards;
     }
+    img {
+      width: 100%;
+    }
   }
 
   &__areaImage--tl {
-    max-width: 60rem;
-    height: 60rem;
+    max-width: 30rem;
+    height: 30rem;
     top: 0;
     left: 15%;
+    @include u-mqMin {
+      max-width: 60rem;
+      height: 60rem;
+    }
     .is-animate & {
       transform: scale(1);
       left: 0;
     }
   }
   &__areaImage--tr {
-    max-width: 45rem;
-    height: 35rem;
+    max-width: 22.5rem;
+    height: 17.5rem;
     top: 0;
     right: 15%;
+    @include u-mqMin {
+      max-width: 45rem;
+      height: 35rem;
+    }
     .is-animate & {
       transform: scale(1);
       right: 0;
@@ -57,10 +69,14 @@ loading
   }
 
   &__areaImage--bl {
-    max-width: 45rem;
-    height: 35rem;
+    max-width: 22.5rem;
+    height: 17.5rem;
     bottom: 0;
     left: 15%;
+    @include u-mqMin {
+      max-width: 45rem;
+      height: 35rem;
+    }
     .is-animate & {
       transform: scale(1);
       left: 0;
@@ -68,10 +84,14 @@ loading
 
   }
   &__areaImage--br {
-    max-width: 60rem;
-    height: 60rem;
+    max-width: 30rem;
+    height: 30rem;
     bottom: 0;
     right: 15%;
+    @include u-mqMin {
+      max-width: 60rem;
+      height: 60rem;
+    }
     .is-animate & {
       transform: scale(1);
       right: 0;

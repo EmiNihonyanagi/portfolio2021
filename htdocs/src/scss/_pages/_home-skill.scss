@@ -2,7 +2,10 @@
 home__skill
 ====================================================================*/
 .home__skill {
-  padding: 10rem 0;
+  padding: 5rem 0;
+  @include u-mqMin {
+    padding: 10rem 0;
+  }
   &-area {
     padding-left: 0;
     list-style: none;
@@ -10,12 +13,19 @@ home__skill
   }
   &-areaItem {
     display: flex;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    @include u-mqMin {
+      margin-bottom: 1rem;
+    }
 
   }
   &-areaTitle {
-    font-size: 3rem;
+    font-size: 2rem;
     min-width: 26rem;
+    @include u-mqMin {
+      font-size: 3rem;
+    }
 
   }
   &-areaYear {

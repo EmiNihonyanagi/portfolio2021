@@ -20,15 +20,29 @@ export const scrollTrigger = () => {
 
 
 
-  const el_02 = document.querySelector('.js-horizontalArea__item');
+  const el_02 = document.querySelector('.js-horizontalArea__item01');
   gsap.to(el_02, {
     xPercent: -200,
     ease: 'none',
     scrollTrigger: {
       markers: true,
-      trigger: '.js-horizontalArea',
+      trigger: '.js-horizontalArea01',
       start: 'top left',
         end: `+=${el_02.clientWidth}`,
+      scrub: true,
+      pin: true,
+    },
+  });
+
+  const el_03 = document.querySelector('.js-horizontalArea__item02');
+  gsap.to(el_03, {
+    xPercent: -200,
+    ease: 'none',
+    scrollTrigger: {
+      markers: true,
+      trigger: '.js-horizontalArea02',
+      start: 'top left',
+        end: `+=${el_03.clientWidth}`,
       scrub: true,
       pin: true,
     },

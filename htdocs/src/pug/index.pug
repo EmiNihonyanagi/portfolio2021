@@ -32,17 +32,16 @@ html(lang="ja")
 
         //- MAIN CONTENT
         main.main(role="main")
-            .home__portfolio.js-horizontalArea(id="home__portfolio")
-                .js-horizontalArea__item
-                    .home__portfolio-container.container
-                        h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Portfolio
-                            span.main__subTitle.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s") 2015-2021
-                        include ./_inc/_homePortfolio.pug
+            .home__portfolio.js-horizontalArea01(id="home__portfolio")
+                .home__portfolio-container.container
+                    h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Portfolio
+                        span.main__subTitle.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s") 2015-2021
+                    include ./_inc/_homePortfolio.pug
 
             .home__profile(id="home__profile")
                 .home__profile-container.container
                     figure.home__profile-thum.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
-                        img(src="https://placehold.jp/450x450.png", alt="")
+                        img(src="./_assets/images/top/profile_bg.jpg", alt="" class="parallax")
                     .home__profile-text
                         h2.main__title.js-main__title Profile
                         .wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s")
@@ -51,10 +50,7 @@ html(lang="ja")
                             p.main__text クライアントとの商談を行い、エンドクライアントにとってより運用しやすい構築を心がけております。
                             p.main__text 新人教育担当、コードレビュー、外注先への指示出し等のディレクター補佐・進行管理・デバッグを行なっております。
 
-            .home__career(id="home__career")
-                .container
-                    h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Career
-                    include ./_inc/_homeCareer.pug
+            include ./_inc/_homeCareer.pug
 
             .home__skill(id="home__skill")
                 .container

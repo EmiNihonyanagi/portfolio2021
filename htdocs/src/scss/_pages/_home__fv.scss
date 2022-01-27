@@ -12,7 +12,11 @@ home__fv
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 70rem;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  @include u-mqMin {
+    min-height: 70rem;
+  }
 
   &-area {
     display: inline-block;
@@ -29,7 +33,10 @@ home__fv
   }
   &-areaName {
     color: $gold;
-    font-size: 6rem;
+    font-size: 4rem;
+    @include u-mqMin {
+      font-size: 6rem;
+    }
     .is-show & {
       @include u-trs;
       animation-name:fadeInUp;

@@ -10,10 +10,22 @@
 
 
         ];
-
-ul.home__career-area.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.4s")
-    each item in career_item
-        li.home__career-areaItem.animate__target
-            .home__career-areaYear !{item.year}
-                span.home__career-areaCompany !{item.company}
-            .home__career-areaText !{item.text}
+div(id="home__career")
+    .home__career.u-pcDb
+        .container
+            h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Career
+            ul.home__career-area.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.4s")
+                each item in career_item
+                    li.home__career-areaItem.animate__target
+                        .home__career-areaYear !{item.year}
+                            span.home__career-areaCompany !{item.company}
+                        .home__career-areaText !{item.text}
+    .home__career.js-horizontalArea02.u-spDb
+        .container
+            h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Career
+            ul.home__career-area.js-horizontalArea__item02.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.4s")
+                each item in career_item
+                    li.home__career-areaItem.animate__target
+                        .home__career-areaYear !{item.year}
+                            span.home__career-areaCompany !{item.company}
+                        .home__career-areaText !{item.text}

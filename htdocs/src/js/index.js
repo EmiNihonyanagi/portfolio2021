@@ -10,6 +10,7 @@ import { scrollTrigger } from './modules/_scrollTrigger';
 import { scrollBlockAnime } from './modules/_scrollBlockAnime';
 
 
+
 $(function () {
   loading();
   svgAnimation();

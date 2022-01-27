@@ -3,25 +3,44 @@ home__portfolio
 ====================================================================*/
 .home__portfolio{
   position: relative;
+  padding-top: 5rem!important;
+  overflow: hidden;
+  @include u-mqMin {
+    padding-top: 10rem!important;
+  }
   &-container {
     display: flex;
-    height: 100vh;
+    min-height: 40rem;
+    @include u-mqMin {
+      height: 100vh;
+    }
+
   }
   &-area {
     position: absolute;
-    left: 80rem;
+    left: 10rem;
+    top: 10rem;
+    padding-top: 10rem;
     display: flex;
-    gap: 3rem;
+    @include u-mqMin {
+      top: 0;
+      left: 80rem;
+    }
   }
   &-areaItem {
-    display: inline-block;
-    max-width: 30rem;
-    width: calc(100% / 3 );
+    display: block;
+    max-width: 100%;
+    width: 15rem;
     position: relative;
+    cursor: pointer;
+    @include u-mqMin {
+      width: 30rem;
+    }
 
   }
   &-areaThum {
     img {
+      width: 100%;
 
     }
 
@@ -41,7 +60,7 @@ home__portfolio
     border-radius: 50%;
     opacity: 0;
     @include u-trs;
-    &:hover {
+    .home__portfolio-areaItem:hover & {
       opacity: 1;
       border-radius: 0;
       @include u-trs;
