@@ -35,39 +35,39 @@ home__career
 
     opacity: 0;
     @include u-trs;
-    animation-name:fadeIn;
-    animation-duration:1s;
-    animation-fill-mode:forwards;
-    .is-animate & {
+    &.is-animate {
+      animation-name:fadeIn;
+      animation-duration:1s;
+      animation-fill-mode:forwards;
       &:nth-child(1) {
-        animation-delay: 1.4s;
+        animation-delay: 0.4s;
       }
       &:nth-child(2) {
-        animation-delay: 1.8s;
+        animation-delay: 0.8s;
       }
       &:nth-child(3) {
-        animation-delay: 2.2s;
+        animation-delay: 1.2s;
       }
       &:nth-child(4) {
-        animation-delay: 2.6s;
+        animation-delay: 1.6s;
       }
       &:nth-child(5) {
-        animation-delay: 3s;
+        animation-delay: 2s;
       }
       &:nth-child(6) {
-        animation-delay: 3.4s;
+        animation-delay: 2.4s;
       }
       &:nth-child(7) {
-        animation-delay: 3.8s;
+        animation-delay: 2.8s;
       }
       &:nth-child(8) {
-        animation-delay: 4.2s;
+        animation-delay: 3.2s;
       }
       &:nth-child(9) {
-        animation-delay: 4.6s;
+        animation-delay: 3.6s;
       }
       &:nth-child(10) {
-        animation-delay: 5s;
+        animation-delay: 4s;
       }
     }
 

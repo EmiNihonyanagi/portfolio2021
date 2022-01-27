@@ -20,43 +20,48 @@ html(lang="ja")
     head
         //- HEAD
         include ./_inc/_head.pug
-
-
     body(class=`${currentPage}`)#top
+        //- LOADING
+        include ./_inc/_siteLoading.pug
+
         //- HEADER
+        include ./_inc/_siteHeader.pug
+
+        //- FV
         include ./_inc/_homeFv.pug
 
         //- MAIN CONTENT
         main.main(role="main")
-            .home__portfolio.js-horizontalArea
+            .home__portfolio.js-horizontalArea(id="home__portfolio")
                 .js-horizontalArea__item
                     .home__portfolio-container.container
                         h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Portfolio
                             span.main__subTitle.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s") 2015-2021
                         include ./_inc/_homePortfolio.pug
 
-            .home__profile
+            .home__profile(id="home__profile")
                 .home__profile-container.container
                     figure.home__profile-thum.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
                         img(src="https://placehold.jp/450x450.png", alt="")
                     .home__profile-text
-                        h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Profile
+                        h2.main__title.js-main__title Profile
                         .wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s")
                             p.main__text 2012年より主に受託案件を中心に、Web制作会社、フリーランスにて制作経験を積む。
-                            p.main__text WordPressのカスタマイズ経験が豊富で、クライアントとの商談を交え、エンドクライアントにとってより運用しやすい構築を心がけております。
-                            p.main__text 教育担当や、国外の外注先への指示出しを多く経験し、確認作業の徹底に注力を注いでおります。
+                            p.main__text WordPressカスタマイズ・本体＋プラグインアップデート・新規構築・運用等の経験が豊富です。
+                            p.main__text クライアントとの商談を行い、エンドクライアントにとってより運用しやすい構築を心がけております。
+                            p.main__text 新人教育担当、コードレビュー、外注先への指示出し等のディレクター補佐・進行管理・デバッグを行なっております。
 
-            .home__career
+            .home__career(id="home__career")
                 .container
                     h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Career
                     include ./_inc/_homeCareer.pug
 
-            .home__skill
+            .home__skill(id="home__skill")
                 .container
                     h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Skill
                     include ./_inc/_homeSkill.pug
 
-            .home__tool
+            .home__tool(id="home__tool")
                 .container
                     h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Tool
                     include ./_inc/_homeTool.pug
