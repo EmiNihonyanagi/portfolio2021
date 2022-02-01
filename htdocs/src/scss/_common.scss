@@ -17,16 +17,14 @@ html {
 body {
   @include fontFeature;
   -webkit-print-color-adjust: exact;
-
-  // Liquid
-  @include u-mqMax() {
-
+  font-family: $Roboto;
+  font-size: 1.6rem;
+  color: $black;
+  font-weight: 400;
+  @include u-mqMin {
+    font-size: 2rem;
   }
 
-  // SP
-  @include u-mqMax($maxW: $windowSP) {
-
-  }
 }
 
 /*-----------------------------------------------
@@ -95,16 +93,25 @@ PC/SP
 /*-----------------------------------------------
 main
 ------------------------------------------------*/
-.siteContent {
-  min-height: calc(100vh - #{$headerHeightPC + $headerHeightPC});
-  padding-top: $headerHeightPC;
+.container {
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto;
+}
 
-  .is_login_user & {
+.main__title {
+  @include u-title;
+  margin-bottom: 5rem;
+  @include u-mqMin {
+    margin-bottom: 10rem;
   }
+}
 
-  // SP
-  @include u-mqMax($maxW: $windowSP) {
-    min-height: calc(100vh - #{$footerHeightSP});
-    padding-top: $headerHeightSP;
+.main__subTitle {
+  font-size: 2.4rem;
+  display: block;
+  text-align: right;
+  @include u-mqMin {
+    font-size: 6rem;
   }
 }

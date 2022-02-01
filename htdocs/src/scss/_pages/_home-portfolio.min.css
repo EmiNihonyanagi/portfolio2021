@@ -1,0 +1,1 @@
+.home__portfolio{position:relative}.home__portfolio-container{display:flex;height:100vh}.home__portfolio-area{position:absolute;left:80rem;display:flex;gap:3rem}.home__portfolio-areaItem{display:inline-block;max-width:30rem;width:calc(100% / 3);vertical-align:top}

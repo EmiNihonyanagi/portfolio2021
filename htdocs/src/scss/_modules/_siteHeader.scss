@@ -2,26 +2,139 @@
 siteHeader
 ====================================================================*/
 .siteHeader {
-  background: tomato;
-  box-shadow: 1px 1px 6px 4px rgba($black, 0.04);
-  height: $headerHeightPC;
-  left: 0;
-  padding: 20px 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
+  position: relative;
 
-  .is_login_user & {
-    top: $wpAdminBarPC;
+  &__button {
+    right: 1.5rem;
+    top: 1.5rem;
+    position: fixed;
+    cursor: pointer;
+    z-index: 2;
+    @include u-mqMin {
+      right: 3rem;
+      top: 3rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      background: rgba(202, 212, 227, 0.9);
+      border-radius: 50%;
+      z-index: 1;
+      transition: all .6s;
+      transform: scale(1);
+      box-shadow: 0px 0px 16px -6px rgba(255,255,255,0.9);
+      @include u-mqMin {
+        width: 7rem;
+        height: 7rem;
+      }
+    }
+    &.is-open {
+      &::before {
+        transition: all .6s;
+        transform: scale(12);
+        -webkit-transform: scale(12);
+        -moz-transform: scale(12);
+        -ms-transform: scale(12);
+        -o-transform: scale(12);
+        @include u-mqMin {
+          transform: scale(10);
+        }
+      }
+    }
   }
-  // headerの上部固定の時に、ページごとにリピートされないように
-  @include u-print {
-    position: absolute;
-  }
+  &__button-text {
+    position: fixed;
+    right: 2rem;
+    top: 3rem;
+    z-index: 3;
+    font-size: 1.6rem;
+    color: $white;
+    @include u-trs;
+    @include u-mqMin {
+      right: 4rem;
+      top: 5rem;
+      font-size: 2rem;
+    }
+    &::before {
+      content: "Menu";
+    }
+    .is-open & {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      -moz-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      -o-transform: scale(1.5);
+      right: 7.5rem;
+      @include u-trs;
+      @include u-mqMin {
+        right: 10rem;
+      }
+      &::before {
+        content: "× Close";
+      }
+    }
 
-  &__innerArea {
-    @include u-contentCenter($widthPC: $contentCenter, $paddingLR-PC: 15px, $paddingLR-SP: 15px);
-    @include u-flex($jc: space-between, $ai: center);
+  }
+  &__nav {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 2rem;
+    top: 6rem;
+    max-width: 12rem;
+    width: 100%;
+    z-index: 3;
+    @include u-mqMin {
+      right: 3rem;
+      top: 10rem;
+      max-width: 15rem;
+    }
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+      @include u-trs;
+    }
+
+  }
+  &__navList {
+    list-style: none;
+    padding-left: 0;
+
+  }
+  &__navList-item {
+    opacity: 0;
+    font-size: 2.6rem;
+    line-height: 1.8;
+    @include u-mqMin {
+      font-size: 3rem;
+    }
+    .is-active & {
+      animation-name:fadeInLeft;
+      animation-duration: 0.8s;
+      animation-fill-mode:forwards;
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.8s;
+      }
+    }
+    a {
+      color: $white;
+      @include u-trsPC;
+
+    }
+
   }
 }

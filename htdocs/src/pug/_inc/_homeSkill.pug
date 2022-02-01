@@ -1,0 +1,22 @@
+-
+    let skill_item = [
+            {title: 'HTML', year: '9'},
+            {title: 'CSS', year: '9'},
+            {title: 'WordPress', year: '7'},
+            {title: 'JavaScript/jQuery', year: '8'},
+            {title: 'Pug', year: '4'},
+            {title: 'SCSS', year: '5'},
+            {title: 'Bootstrap', year: '4'},
+
+        ];
+section.home__skill(id="home__skill")
+    .container
+        h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Skill
+        ul.home__skill-area
+            each item in skill_item
+                li.home__skill-areaItem.wow.fadeIn(data-wow-duration="1s" data-wow-delay="0.4s")
+                    .home__skill-areaTitle= item.title
+                    .home__skill-areaYear
+                        - for (var x = 0; x < item.year; x++)
+                            span.home__skill-areaYearBlock.animate__target ■
+                        span.home__skill-areaYearText.animate__target #{item.year} 年

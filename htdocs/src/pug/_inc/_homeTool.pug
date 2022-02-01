@@ -1,0 +1,47 @@
+-
+    let tool_item01 = [
+            {name: 'Photoshop'},
+            {name: 'Illustrator'},
+            {name: 'InDesign'},
+            {name: 'XD'},
+            {name: 'Sketch'},
+            {name: 'Figma'},
+        ];
+    let tool_item02 = [
+            {name: 'Zeplin'},
+            {name: 'Visual Studio<br>Code '},
+            {name: 'Bitbucket'},
+            {name: 'SourceTree'},
+            {name: 'CodePen'},
+            {name: 'Local by Flywheel'},
+            {name: 'Gyazo'},
+            {name: 'MONJI'},
+        ];
+    let tool_item03 = [
+            {name: 'Excel'},
+            {name: 'Word'},
+            {name: 'PowerPoint'},
+            {name: 'Backlog'},
+            {name: 'ChatWork'},
+            {name: 'Slack'},
+            {name: 'Trello'},
+            {name: 'Asana'},
+        ];
+section.home__tool(id="home__tool")
+    .container
+        h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Tool
+        dl.home__tool-area.wow.fadeInUp(data-wow-duration=".5s" data-wow-delay="0.4s")
+            dt.home__tool-areaTitle デザインツール
+            -
+            each item in tool_item01
+                dd.home__tool-areaItem !{item.name}
+        dl.home__tool-area.wow.fadeInUp(data-wow-duration=".5s" data-wow-delay="0.4s")
+            dt.home__tool-areaTitle 制作ツール
+            -
+            each item in tool_item02
+                dd.home__tool-areaItem !{item.name}
+        dl.home__tool-area.wow.fadeInUp(data-wow-duration=".5s" data-wow-delay="0.4s")
+            dt.home__tool-areaTitle ビジネスツール
+            -
+            each item in tool_item03
+                dd.home__tool-areaItem !{item.name}

@@ -49,27 +49,15 @@
   }
 }
 
-// CONFRTTI ANIMATION
-@keyframes confetti {
+// bg_gradient
+@keyframes bg_gradient{
   0% {
-    opacity: 0;
-    transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
-  }
-  25% {
-    opacity: 1;
-    transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+    background-position: 0% 50%;
   }
   50% {
-    transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 50vh);
-  }
-  75% {
-    transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 70vh);
-  }
-  86% {
-    opacity: 1;
+    background-position: 100% 50%;
   }
   100% {
-    opacity: 0;
-    transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 80vh);
+    background-position: 0% 50%;
   }
 }
