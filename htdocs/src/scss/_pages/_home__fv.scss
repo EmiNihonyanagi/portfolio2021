@@ -22,6 +22,8 @@ home__fv
     display: inline-block;
     text-align: center;
     opacity: 0;
+    max-width: 50rem;
+    padding: 0 1.5rem;
     @include u-trs;
     &.is-show {
       @include u-trs;
@@ -32,7 +34,7 @@ home__fv
 
   }
   &-areaName {
-    color: $gold;
+    color: $gray;
     font-size: 4rem;
     @include u-mqMin {
       font-size: 6rem;
@@ -51,7 +53,7 @@ home__fv
     }
   }
   &-areaText {
-    color: $gold;
+    color: $gray;
     font-size: 3rem;
     text-align: right;
 

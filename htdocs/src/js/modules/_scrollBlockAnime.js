@@ -9,7 +9,9 @@ export const scrollBlockAnime = () => {
         }
     }
   }
+
   //スクロールイベントリスナーに登録
   window.addEventListener('scroll', myFunc, false);
+
 
   };

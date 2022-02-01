@@ -18,19 +18,13 @@ body {
   @include fontFeature;
   -webkit-print-color-adjust: exact;
   font-family: $Roboto;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: $black;
   font-weight: 400;
-
-  // Liquid
-  @include u-mqMax() {
-
+  @include u-mqMin {
+    font-size: 2rem;
   }
 
-  // SP
-  @include u-mqMax($maxW: $windowSP) {
-
-  }
 }
 
 /*-----------------------------------------------

@@ -5,6 +5,7 @@ home__portfolio
   position: relative;
   padding-top: 5rem!important;
   overflow: hidden;
+  width: 100%;
   @include u-mqMin {
     padding-top: 10rem!important;
   }
@@ -22,9 +23,11 @@ home__portfolio
     top: 10rem;
     padding-top: 10rem;
     display: flex;
+    min-width: 150rem;
     @include u-mqMin {
       top: 0;
       left: 80rem;
+      min-width: 300rem;
     }
   }
   &-areaItem {
@@ -41,6 +44,7 @@ home__portfolio
   &-areaThum {
     img {
       width: 100%;
+      height: auto;
 
     }
 
@@ -55,11 +59,15 @@ home__portfolio
     left: 0;
     bottom: 4rem;
     width: 100%;
-    height: 15rem;
+    min-height: 7rem;
+    padding: 1.5rem;
     z-index: 1;
     border-radius: 50%;
     opacity: 0;
     @include u-trs;
+    @include u-mqMin {
+      height: 15rem;
+    }
     .home__portfolio-areaItem:hover & {
       opacity: 1;
       border-radius: 0;

@@ -12,38 +12,33 @@ home__profile
     }
   }
   &-thum {
-    width: 20rem;
-    height: 20rem;
-    overflow: hidden;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    max-width: 20rem;
+    width: 100%;
     margin: auto;
     @include u-mqMin {
-      width: 45rem;
-      height: 45rem;
+      max-width: 45rem;
+      flex-basis: 30%;
     }
 
     img {
-      // mask-image:url('../images/top/profile_mask.png');
-      // -webkit-mask-image: url('../images/top/profile_mask.png');
-      // mask-repeat: no-repeat;
-      // -webkit-mask-repeat: no-repeat;
-      background-attachment: fixed;
+      max-width:100%;
 
     }
-}
+  }
   &-text {
     width: 100%;
     @include u-mqMin {
-      max-width: calc(100% - 45rem);
+      flex-basis: 60%;
       padding-left: 5rem;
     }
 
   }
   .main__title {
-    text-align: right;
+    margin-top: 2rem;
+    text-align: center;
+    @include u-mqMin {
+      margin-top: 0;
+      text-align: right;
+    }
   }
 }

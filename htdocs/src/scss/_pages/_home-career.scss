@@ -3,12 +3,16 @@ home__career
 ====================================================================*/
 .home__career {
   position: relative;
-  background: rgba(202, 212, 227, 0.9);
   margin-top: 5rem;
   padding: 8rem 0 5rem;
   width: 100%;
   overflow: hidden;
-  @include u-mqMin {
+  background: rgb(202,212,227);
+  background: radial-gradient(circle, rgba(202,212,227,1) 0%, rgba(227,202,218,1) 100%);
+  background-size: 200% 200%;
+  animation: bg_gradient 10s ease infinite;
+  -webkit-animation: bg_gradient 10s ease infinite;
+  @include u-mqMin  {
     margin-top: 10rem;
     padding: 10rem 0;
   }
@@ -33,6 +37,7 @@ home__career
     display: flex;
     padding-left: 0;
     list-style: none;
+    min-width: 150rem;
   }
   &-areaItem {
     position: relative;
@@ -41,8 +46,9 @@ home__career
     font-size: 1.6rem;
     text-align: center;
     color: $white;
-    opacity: 0;
+    // opacity: 0;
     @include u-trs;
+    height: 100%;
     @include u-mqMin {
       min-width: 21rem;
     }

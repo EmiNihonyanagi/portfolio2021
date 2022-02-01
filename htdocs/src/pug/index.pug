@@ -1,18 +1,14 @@
 //- META INFORMATION
-- const page_title = 'Website Name'
+- const page_title = 'Emi Nihonyanagi Portfolio'
 - const relativePath = '.'
-- const meta_title = 'this is meta title'
-- const meta_keywords = 'this is meta keywords'
-- const meta_description = 'this is meta description'
-- const meta_og_url = 'http://website.com'
+//- - const meta_title = 'this is meta title'
+- const meta_description = 'Emi Nihonyanagi Portfolio'
 - const currentPage = 'home'
 
 
 //- EXTERNAL LIBRARIES
 - const isJquery = true
 - const isWowEffects = true
-- const isSwiper = false
-- const isBootstrap = false
 - const isPolyfill = true
 
 doctype html
@@ -21,46 +17,37 @@ html(lang="ja")
         //- HEAD
         include ./_inc/_head.pug
     body(class=`${currentPage}`)#top
-        //- LOADING
-        include ./_inc/_siteLoading.pug
+        div(ontouchstart="")
+            //- LOADING
+            include ./_inc/_siteLoading.pug
 
-        //- HEADER
-        include ./_inc/_siteHeader.pug
+            //- HEADER
+            include ./_inc/_siteHeader.pug
 
-        //- FV
-        include ./_inc/_homeFv.pug
+            //- FV
+            include ./_inc/_homeFv.pug
 
-        //- MAIN CONTENT
-        main.main(role="main")
-            .home__portfolio.js-horizontalArea01(id="home__portfolio")
-                .home__portfolio-container.container
-                    h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Portfolio
-                        span.main__subTitle.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s") 2015-2021
-                    include ./_inc/_homePortfolio.pug
+            //- MAIN CONTENT
+            main.main
+                include ./_inc/_homePortfolio.pug
 
-            .home__profile(id="home__profile")
-                .home__profile-container.container
-                    figure.home__profile-thum.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
-                        img(src="./_assets/images/top/profile_bg.jpg", alt="" class="parallax")
-                    .home__profile-text
-                        h2.main__title.js-main__title Profile
-                        .wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s")
-                            p.main__text 2012年より主に受託案件を中心に、Web制作会社、フリーランスにて制作経験を積む。
-                            p.main__text WordPressカスタマイズ・本体＋プラグインアップデート・新規構築・運用等の経験が豊富です。
-                            p.main__text クライアントとの商談を行い、エンドクライアントにとってより運用しやすい構築を心がけております。
-                            p.main__text 新人教育担当、コードレビュー、外注先への指示出し等のディレクター補佐・進行管理・デバッグを行なっております。
+                section.home__profile(id="home__profile")
+                    .home__profile-container.container
+                        figure.home__profile-thum.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            img(src="./_assets/images/top/profile_bg.png", alt="" class="")
+                        .home__profile-text
+                            h2.main__title.js-main__title Profile
+                            .wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s")
+                                p.main__text 2012年より主に受託案件を中心に、Web制作会社、フリーランスにて制作経験を積む。
+                                p.main__text WordPressカスタマイズ・本体＋プラグインアップデート・新規構築・運用等の経験が豊富です。
+                                p.main__text クライアントとの商談を行い、エンドクライアントにとってより運用しやすい構築を心がけております。
+                                p.main__text 新人教育担当、コードレビュー、外注先への指示出し等のディレクター補佐・進行管理・デバッグを経験しております。
 
-            include ./_inc/_homeCareer.pug
+                include ./_inc/_homeCareer.pug
 
-            .home__skill(id="home__skill")
-                .container
-                    h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Skill
-                    include ./_inc/_homeSkill.pug
+                include ./_inc/_homeSkill.pug
 
-            .home__tool(id="home__tool")
-                .container
-                    h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Tool
-                    include ./_inc/_homeTool.pug
+                include ./_inc/_homeTool.pug
 
-        //- FOOTER
-        include ./_inc/_siteFooter.pug
+            //- FOOTER
+            include ./_inc/_siteFooter.pug

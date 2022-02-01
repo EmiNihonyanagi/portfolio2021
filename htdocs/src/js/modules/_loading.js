@@ -8,7 +8,7 @@ export const loading = () => {
   }, 5000);
 
   const timeAction = function () {
-    const target_img = document.querySelectorAll('.loading__areaImage');
+    const target_img = document.querySelectorAll('.loading__areaText');
     for (let i = 0; i < target_img.length; i++) {
       target_img[i].classList.add("is-show");
     }

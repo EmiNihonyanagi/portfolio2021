@@ -2,6 +2,7 @@
 import { loading } from './modules/_loading';
 import { svgAnimation } from './modules/_svgAnimation';
 import { polyfill } from './modules/_polyfill';
+import { linkTraget_rel } from './modules/_linkTraget_rel';
 // import { viewport } from './modules/_viewport';
 import { btnClickFunc } from './modules/_btnClickFunc';
 import { smoothScroll } from './modules/_smoothScroll';
@@ -21,4 +22,5 @@ $(function () {
   wowEffects();
   scrollTrigger();
   scrollBlockAnime();
+  linkTraget_rel();
 });

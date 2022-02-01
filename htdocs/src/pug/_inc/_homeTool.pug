@@ -27,20 +27,21 @@
             {name: 'Trello'},
             {name: 'Asana'},
         ];
-
-section
-    dl.home__tool-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
-        dt.home__tool-areaTitle デザインツール
-        -
-        each item in tool_item01
-            dd.home__tool-areaItem !{item.name}
-    dl.home__tool-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
-        dt.home__tool-areaTitle 制作ツール
-        -
-        each item in tool_item02
-            dd.home__tool-areaItem !{item.name}
-    dl.home__tool-area.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
-        dt.home__tool-areaTitle ビジネスツール
-        -
-        each item in tool_item03
-            dd.home__tool-areaItem !{item.name}
+section.home__tool(id="home__tool")
+    .container
+        h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Tool
+        dl.home__tool-area.wow.fadeInUp(data-wow-duration=".5s" data-wow-delay="0.4s")
+            dt.home__tool-areaTitle デザインツール
+            -
+            each item in tool_item01
+                dd.home__tool-areaItem !{item.name}
+        dl.home__tool-area.wow.fadeInUp(data-wow-duration=".5s" data-wow-delay="0.4s")
+            dt.home__tool-areaTitle 制作ツール
+            -
+            each item in tool_item02
+                dd.home__tool-areaItem !{item.name}
+        dl.home__tool-area.wow.fadeInUp(data-wow-duration=".5s" data-wow-delay="0.4s")
+            dt.home__tool-areaTitle ビジネスツール
+            -
+            each item in tool_item03
+                dd.home__tool-areaItem !{item.name}

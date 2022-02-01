@@ -1,20 +1,25 @@
 -
     let portfolio_item = [
-            {title: "銀行 コーポレートサイト", link: "bank"},
-            {title: "ホテル コーポレートサイト", link: "hotel"},
-            {title: "出前館 採用サイト", link: "demaecan"},
-            {title: "築地本願寺 他言語サイト", link: "thukiji"},
-            {title: "トラストコミュニケーション", link: "tc"},
-            {title: "milbon STYLIST CLUB", link: "milbon"},
-            {title: "日本大学商学部", link: "nichidai"},
-            {title: "アスリートファミリープロジェクト", link: "afp"},
-            {title: "DJ Hostel Ginza", link: "djhotel"},
-            {title: "TAG", link: "tag"},
+            //- {title: "銀行 コーポレートサイト", link: "https://www.muf.bk.mufg.jp/", img:"bank"},
+            //- {title: "ホテル コーポレートサイト", link: "", img:"hotel"},
+            {title: "出前館 採用サイト", link: "https://recruit.demae-can.com/", img:"demaecan"},
+            {title: "築地本願寺 他言語サイト", link: "https://tsukijihongwanji.jp/global/", img:"thukiji"},
+            {title: "トラストコミュニケーション", link: "https://tcom.co.jp/", img:"tc"},
+            //- {title: "milbon STYLIST CLUB", link: "", img:"milbon"},
+            {title: "日本大学商学部", link: "https://www.bus.nihon-u.ac.jp/", img:"nichidai"},
+            {title: "アスリートファミリープロジェクト", link: "https://athlete-family-project.com/", img:"afp"},
+            {title: "DJ Hostel Ginza", link: "https://dj-hostel-ginza.jp/", img:"djhotel"},
+            {title: "TAG", link: "https://www.tag-group.jp/", img:"tag"},
         ];
-
-.home__portfolio-area.js-horizontalArea__item01.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
-    each item in portfolio_item
-        a.home__portfolio-areaItem(href=`${relativePath}/`+`${item.link}` ontouchstart="")
-            figure.home__portfolio-areaThum
-                img(src=`${relativePath}/_assets/images/top/portfolio_${item.link}.png`, alt=`${item.title}`)
-            .home__portfolio-areaLink !{item.title}
+.js-horizontal__01
+    section.home__portfolio.js-horizontalArea01(id="home__portfolio")
+        .home__portfolio-container.container
+            h2.main__title.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s") Portfolio
+                span.main__subTitle.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.6s") 2015-2021
+            .js-horizontalArea__01
+                .home__portfolio-area.js-horizontalArea__item01.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
+                    each item in portfolio_item
+                        a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${item.link}` target="_blank")
+                            figure.home__portfolio-areaThum
+                                img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
+                            .home__portfolio-areaLink !{item.title}

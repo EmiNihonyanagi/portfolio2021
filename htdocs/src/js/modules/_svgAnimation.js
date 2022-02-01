@@ -5,7 +5,7 @@ export const svgAnimation = () => {
     new Vivus('mask', { //ここにsvgタグにつけたIDを書き込む
       type: 'oneByOne',
       start: 'inViewport',
-      duration: 100,
+      duration: 40,
       forceRender: false,
       animTimingFunction: Vivus.LINEAR,
     });

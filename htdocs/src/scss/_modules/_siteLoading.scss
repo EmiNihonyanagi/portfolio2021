@@ -1,101 +1,66 @@
 /*====================================================================
 loading
 ====================================================================*/
+$speed: 7s;
+$wordCount: 2;
 .loading{
   width: 100%;
   height: 100vh;
   min-height: 70rem;
   position: relative;
   z-index: 1000;
-  background: $white;
+  background: $lightGray;
   overflow: hidden;
   @include u-trs;
   &.is-animate {
     z-index: -1;
+    background: $white;
+    opacity: 0;
     @include u-trs;
-
   }
 
   &__area {
     width: 100%;
     height: 100vh;
     text-align: center;
+    // filter: contrast(25) blur(1px);
   }
 
-  &__areaImage {
+
+  &__areaText {
     width: 100%;
     opacity: 0;
+    font-size: 4rem;
     position: absolute;
-    transform: scale(2);
-    @include u-trs;
+    top: 50%;
+    left: 50%;
+    color: $gold;
+    @include u-mqMin {
+      font-size: 6rem;
+    }
     &.is-show {
-      @include u-trs;
-      animation-name:fadeIn;
-      animation-duration:1s;
-      animation-fill-mode:forwards;
-    }
-    img {
-      width: 100%;
+      transform: translate(-50%, -50%);
+      animation: word $speed infinite ease-in-out;
+
+      @for $i from 0 to $wordCount {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: ($speed / ($wordCount + 1) * $i) - $speed;
+        }
+      }
+
+      @keyframes word {
+        0%, 5%, 100% {
+          filter: blur(0px);
+          opacity: 1;
+          color: #ccc;
+        }
+        20%, 80% {
+          filter: blur(1em);
+          opacity: 0;
+          color: $lightGray;
+        }
+      }
     }
   }
 
-  &__areaImage--tl {
-    max-width: 30rem;
-    height: 30rem;
-    top: 0;
-    left: 15%;
-    @include u-mqMin {
-      max-width: 60rem;
-      height: 60rem;
-    }
-    .is-animate & {
-      transform: scale(1);
-      left: 0;
-    }
-  }
-  &__areaImage--tr {
-    max-width: 22.5rem;
-    height: 17.5rem;
-    top: 0;
-    right: 15%;
-    @include u-mqMin {
-      max-width: 45rem;
-      height: 35rem;
-    }
-    .is-animate & {
-      transform: scale(1);
-      right: 0;
-    }
-  }
-
-  &__areaImage--bl {
-    max-width: 22.5rem;
-    height: 17.5rem;
-    bottom: 0;
-    left: 15%;
-    @include u-mqMin {
-      max-width: 45rem;
-      height: 35rem;
-    }
-    .is-animate & {
-      transform: scale(1);
-      left: 0;
-    }
-
-  }
-  &__areaImage--br {
-    max-width: 30rem;
-    height: 30rem;
-    bottom: 0;
-    right: 15%;
-    @include u-mqMin {
-      max-width: 60rem;
-      height: 60rem;
-    }
-    .is-animate & {
-      transform: scale(1);
-      right: 0;
-    }
-
-  }
 }
