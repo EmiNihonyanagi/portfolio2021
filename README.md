@@ -1,5 +1,5 @@
 ---
-# emi nihonyanagi ortfolio Site
+# emi nihonyanagi Portfolio Site
 ---
 url : https://portfolio.twowillowsdesign.com/
 
