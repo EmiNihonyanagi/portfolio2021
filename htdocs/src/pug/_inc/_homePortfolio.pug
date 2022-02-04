@@ -20,7 +20,13 @@
             .js-horizontalArea__01
                 .home__portfolio-area.js-horizontalArea__item01.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
                     each item in portfolio_item
-                        a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${item.link}` target="_blank")
-                            figure.home__portfolio-areaThum
-                                img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
-                            .home__portfolio-areaLink !{item.title}
+                        if (item.target == "more")
+                            .home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}`)
+                                figure.home__portfolio-areaThum
+                                    img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
+                                .home__portfolio-areaLink !{item.title}
+                        else
+                            a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${item.link}` target="_blank")
+                                figure.home__portfolio-areaThum
+                                    img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
+                                .home__portfolio-areaLink !{item.title}
