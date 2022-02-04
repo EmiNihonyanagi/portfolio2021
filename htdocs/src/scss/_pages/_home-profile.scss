@@ -54,14 +54,19 @@ home__profile
   &-slideItem {
     margin-top: 3rem;
     margin-bottom: 5rem;
-    text-align: center;
     iframe {
       max-width: 100%;
-      height: 30rem;
+      height: 19rem;
       @include u-mqMin {
         height: 59.6rem;
 
       }
+    }
+  }
+  &-slideNotes {
+    font-size: 1.4rem;
+    @include u-mqMin {
+      font-size: 1.8rem;
     }
   }
 }
