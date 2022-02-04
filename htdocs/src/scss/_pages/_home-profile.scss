@@ -41,4 +41,18 @@ home__profile
       text-align: right;
     }
   }
+  &-slide {
+    max-width: 96rem;
+    margin: 10rem auto;
+
+  }
+  &-slideTitle {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  &-slideItem {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
 }

@@ -1714,6 +1714,22 @@ home__profile
   }
 }
 
+.home__profile-slide {
+  max-width: 96rem;
+  margin: 10rem auto;
+}
+
+.home__profile-slideTitle {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.home__profile-slideItem {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
 /*====================================================================
 home__career
 ====================================================================*/
