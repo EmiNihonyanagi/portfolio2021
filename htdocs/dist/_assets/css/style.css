@@ -1723,17 +1723,36 @@ home__profile
 .home__profile-slide {
   max-width: 80%;
   width: 96rem;
-  margin: 10rem auto;
+  margin: 5rem auto;
+}
+
+@media screen and (min-width: 769px) {
+  .home__profile-slide {
+    margin: 10rem auto;
+  }
 }
 
 .home__profile-slideTitle {
-  font-size: 3rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 769px) {
+  .home__profile-slideTitle {
+    font-size: 3rem;
+  }
+}
+
 .home__profile-slideItem {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .home__profile-slideItem {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
 }
 
 .home__profile-slideItem iframe {
