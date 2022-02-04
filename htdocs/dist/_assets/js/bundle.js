@@ -13,11 +13,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_timers_js__WEBPACK_IMPORTED_MODULE_0__);
 
 var loading = function loading() {
+  document.body.classList.add("is-hide");
   var target = document.getElementsByClassName('js-loading')[0];
   var fv = document.getElementsByClassName('home__fv-area')[0];
   window.setTimeout(function () {
     target.classList.add("is-animate");
     fv.classList.add("is-show");
+    document.body.classList.remove("is-hide");
   }, 5000);
 
   var timeAction = function timeAction() {

@@ -21,8 +21,13 @@ body {
   font-size: 1.6rem;
   color: $black;
   font-weight: 400;
+  overflow: inherit;
   @include u-mqMin {
     font-size: 2rem;
+  }
+  &.is-hide {
+    height: 100vh;
+    overflow: hidden;
   }
 
 }

@@ -1,10 +1,12 @@
 export const loading = () => {
+  document.body.classList.add("is-hide");
   const target = document.getElementsByClassName('js-loading')[0];
   const fv = document.getElementsByClassName('home__fv-area')[0];
   window.setTimeout(function () {
 
     target.classList.add("is-animate");
     fv.classList.add("is-show");
+    document.body.classList.remove("is-hide");
   }, 5000);
 
   const timeAction = function () {
