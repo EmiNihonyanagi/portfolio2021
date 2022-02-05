@@ -18,6 +18,7 @@
 @import '_mixin/u-arrow'; // arrow style
 @import '_mixin/u-formParts'; // form Parts style
 @import '_mixin/u-title'; // title style
+@import '_mixin/u-titleJP'; // titleJP style
 @import '_mixin/u-text'; // text style
 @import '_mixin/u-articleText'; // article text style
 @import '_mixin/u-bnr'; // banner style
@@ -29,6 +30,8 @@
 @import '_modules/siteHeader'; // HEADER
 @import '_modules/siteFooter'; // FOOTER
 @import '_modules/siteLoading'; // LOADING
+@import '_modules/page__fv'; // Page FV
+
 
 @import 'common'; // common style (<body>, PC・SP toggle)
 
@@ -38,5 +41,6 @@
 @import '_pages/home-career'; // honme career
 @import '_pages/home-skill'; // honme skill
 @import '_pages/home-tool'; // honme tool
+@import '_pages/portfolio'; // portfolio
 
 @import 'print'; // print

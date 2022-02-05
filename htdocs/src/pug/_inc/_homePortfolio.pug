@@ -1,12 +1,15 @@
 -
     let portfolio_item = [
-            {title: "出前館 採用サイト", link: "https://recruit.demae-can.com/", img:"demaecan"},
-            {title: "築地本願寺 他言語サイト", link: "https://tsukijihongwanji.jp/global/", img:"thukiji"},
-            {title: "トラストコミュニケーション", link: "https://tcom.co.jp/", img:"tc"},
-            {title: "日本大学商学部", link: "https://www.bus.nihon-u.ac.jp/", img:"nichidai"},
-            {title: "アスリートファミリープロジェクト", link: "https://athlete-family-project.com/", img:"afp"},
-            {title: "DJ Hostel Ginza", link: "https://dj-hostel-ginza.jp/", img:"djhotel"},
-            {title: "TAG", link: "https://www.tag-group.jp/", img:"tag"},
+            {target: "more", title: "銀行サイト", link: "portfolio_01", img: "dummy"},
+            {target: "more", title: "ホテルサイト", link: "portfolio_02", img:"dummy"},
+            {target: "link", title: "出前館 採用サイト", link: "https://recruit.demae-can.com/", img:"demaecan"},
+            {target: "more", title: "美容師コミュニティサイト", link: "portfolio_03", img:"dummy"},
+            {target: "link", title: "築地本願寺 他言語サイト", link: "https://tsukijihongwanji.jp/global/", img:"thukiji"},
+            {target: "link", title: "トラストコミュニケーション", link: "https://tcom.co.jp/", img:"tc"},
+            {target: "link", title: "日本大学商学部", link: "https://www.bus.nihon-u.ac.jp/", img:"nichidai"},
+            {target: "link", title: "アスリートファミリープロジェクト", link: "https://athlete-family-project.com/", img:"afp"},
+            {target: "link", title: "DJ Hostel Ginza", link: "https://dj-hostel-ginza.jp/", img:"djhotel"},
+            {target: "link", title: "TAG", link: "https://www.tag-group.jp/", img:"tag"},
         ];
 .js-horizontal__01
     section.home__portfolio.js-horizontalArea01(id="home__portfolio")
@@ -16,7 +19,15 @@
             .js-horizontalArea__01
                 .home__portfolio-area.js-horizontalArea__item01.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
                     each item in portfolio_item
-                        a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${item.link}` target="_blank")
-                            figure.home__portfolio-areaThum
-                                img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
-                            .home__portfolio-areaLink !{item.title}
+                        if (item.target == "more")
+                            a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${relativePath}/portfolio/${item.link}.html`)
+                                figure.home__portfolio-areaThum
+                                    img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
+                                .home__portfolio-areaLink
+                                    .home__portfolio-areaTitle !{item.title}
+                                    .home__portfolio-areaLabel read more
+                        else
+                            a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${item.link}` target="_blank")
+                                figure.home__portfolio-areaThum
+                                    img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
+                                .home__portfolio-areaLink !{item.title}

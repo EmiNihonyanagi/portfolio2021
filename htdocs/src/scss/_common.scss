@@ -25,7 +25,7 @@ body {
   @include u-mqMin {
     font-size: 2rem;
   }
-  &.is-hide {
+  &.home.is-hide {
     height: 100vh;
     overflow: hidden;
   }
@@ -118,5 +118,13 @@ main
   text-align: right;
   @include u-mqMin {
     font-size: 6rem;
+  }
+}
+
+.main__titleJP {
+  @include u-titleJP;
+  margin-bottom: 2.5rem;
+  @include u-mqMin {
+    margin-bottom: 5rem;
   }
 }
