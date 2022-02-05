@@ -1,10 +1,9 @@
 -
     let portfolio_item = [
-            {target: "more", title: "銀行サイト", link: "more01", img: "dummy"},
-            {target: "more", title: "ホテルサイト", link: "more02", img:"dummy"},
-            {target: "more", title: "企業の社内報サイト", link: "more03", img:"dummy"},
+            {target: "more", title: "銀行サイト", link: "portfolio_01", img: "dummy"},
+            {target: "more", title: "ホテルサイト", link: "portfolio_02", img:"dummy"},
             {target: "link", title: "出前館 採用サイト", link: "https://recruit.demae-can.com/", img:"demaecan"},
-            {target: "more", title: "美容師コミュニティサイト", link: "more04", img:"dummy"},
+            {target: "more", title: "美容師コミュニティサイト", link: "portfolio_03", img:"dummy"},
             {target: "link", title: "築地本願寺 他言語サイト", link: "https://tsukijihongwanji.jp/global/", img:"thukiji"},
             {target: "link", title: "トラストコミュニケーション", link: "https://tcom.co.jp/", img:"tc"},
             {target: "link", title: "日本大学商学部", link: "https://www.bus.nihon-u.ac.jp/", img:"nichidai"},
@@ -21,10 +20,12 @@
                 .home__portfolio-area.js-horizontalArea__item01.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.8s")
                     each item in portfolio_item
                         if (item.target == "more")
-                            .home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}`)
+                            a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${relativePath}/portfolio/${item.link}.html`)
                                 figure.home__portfolio-areaThum
                                     img(src=`${relativePath}/_assets/images/top/portfolio_${item.img}.png`, alt=`${item.title}` width="300" height="400")
-                                .home__portfolio-areaLink !{item.title}
+                                .home__portfolio-areaLink
+                                    .home__portfolio-areaTitle !{item.title}
+                                    .home__portfolio-areaLabel read more
                         else
                             a.home__portfolio-areaItem(class=`home__portfolio-areaItem--${item.img}` href=`${item.link}` target="_blank")
                                 figure.home__portfolio-areaThum

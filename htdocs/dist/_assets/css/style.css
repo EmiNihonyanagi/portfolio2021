@@ -907,20 +907,20 @@ siteHeader
   -o-transition: all .6s;
   -moz-transition: all .6s;
   transition: all .6s;
-  transform: scale(12);
-  -webkit-transform: scale(12);
-  -moz-transform: scale(12);
-  -ms-transform: scale(12);
-  -o-transform: scale(12);
+  transform: scale(13);
+  -webkit-transform: scale(13);
+  -moz-transform: scale(13);
+  -ms-transform: scale(13);
+  -o-transform: scale(13);
 }
 
 @media screen and (min-width: 769px) {
   .siteHeader__button.is-open::before {
-    -webkit-transform: scale(10);
-       -moz-transform: scale(10);
-        -ms-transform: scale(10);
-         -o-transform: scale(10);
-            transform: scale(10);
+    transform: scale(11);
+    -webkit-transform: scale(11);
+    -moz-transform: scale(11);
+    -ms-transform: scale(11);
+    -o-transform: scale(11);
   }
 }
 
@@ -1065,6 +1065,13 @@ siteHeader
      -moz-animation-delay: 0.8s;
        -o-animation-delay: 0.8s;
           animation-delay: 0.8s;
+}
+
+.is-active .siteHeader__navList-item:nth-child(6) {
+  -webkit-animation-delay: 1s;
+     -moz-animation-delay: 1s;
+       -o-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .siteHeader__navList-item a {
@@ -1229,6 +1236,91 @@ loading
 }
 
 /*====================================================================
+page__fv
+====================================================================*/
+.page__fv {
+  margin-bottom: 5rem;
+  background: #cad4e3;
+  background: -webkit-radial-gradient(circle, #cad4e3 0%, #e3cada 100%);
+  background: -moz-radial-gradient(circle, #cad4e3 0%, #e3cada 100%);
+  background: -o-radial-gradient(circle, #cad4e3 0%, #e3cada 100%);
+  background: radial-gradient(circle, #cad4e3 0%, #e3cada 100%);
+  -moz-background-size: 200% 200%;
+       background-size: 200% 200%;
+  -moz-animation: bg_gradient 10s ease infinite;
+    -o-animation: bg_gradient 10s ease infinite;
+       animation: bg_gradient 10s ease infinite;
+  -webkit-animation: bg_gradient 10s ease infinite;
+}
+
+@media screen and (min-width: 769px) {
+  .page__fv {
+    margin-bottom: 10rem;
+  }
+}
+
+.page__fv-area {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+     -moz-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.page__fv-areaTitle {
+  width: 100%;
+  color: #ffffff;
+  font-size: 2.8rem;
+  padding-right: 5rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  font-weight: normal;
+}
+
+@media screen and (min-width: 769px) {
+  .page__fv-areaTitle {
+    font-size: 4rem;
+  }
+}
+
+.page__fv-areaText {
+  color: #ffffff;
+  letter-spacing: 0.08em;
+}
+
+@media screen and (min-width: 769px) {
+  .page__fv-areaText {
+    font-size: 2.8rem;
+  }
+}
+
+/*====================================================================
 COMMON LAYOUT
 ====================================================================*/
 html {
@@ -1261,7 +1353,7 @@ body {
   }
 }
 
-body.is-hide {
+body.home.is-hide {
   height: 100vh;
   overflow: hidden;
 }
@@ -1379,6 +1471,28 @@ main
 @media screen and (min-width: 769px) {
   .main__subTitle {
     font-size: 6rem;
+  }
+}
+
+.main__titleJP {
+  font-family: "Poppins", sans-serif;
+  color: #B9B9B9;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .main__titleJP {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .main__titleJP {
+    margin-bottom: 5rem;
   }
 }
 
@@ -1610,13 +1724,16 @@ home__portfolio
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   position: absolute;
   background: rgba(225, 225, 225, 0.5);
   left: 0;
   bottom: 4rem;
   width: 100%;
   min-height: 7rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1rem;
   z-index: 1;
   -webkit-border-radius: 50%;
      -moz-border-radius: 50%;
@@ -1636,7 +1753,7 @@ home__portfolio
 
 @media screen and (min-width: 769px) {
   .home__portfolio-areaLink {
-    height: 15rem;
+    height: 10rem;
   }
 }
 
@@ -1654,6 +1771,12 @@ home__portfolio
   width: 100%;
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
+}
+
+.home__portfolio-areaLabel {
+  font-weight: bold;
+  text-align: right;
+  width: 100%;
 }
 
 /*====================================================================
@@ -2223,6 +2346,73 @@ home__tool
     max-width: -moz-calc(100% / 6);
     max-width: calc(100% / 6);
   }
+}
+
+/*====================================================================
+portfolio
+====================================================================*/
+.page__portfolio {
+  margin-bottom: 8rem;
+}
+
+@media screen and (min-width: 769px) {
+  .page__portfolio {
+    margin-bottom: 15rem;
+  }
+}
+
+.page__portfolio-detail {
+  max-width: 96rem;
+  width: 80%;
+}
+
+.page__portfolio-detailItem {
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .page__portfolio-detailItem {
+    margin-bottom: 10rem;
+  }
+}
+
+.page__portfolio-box {
+  background: #EAEAEF;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  .page__portfolio-box {
+    padding: 1.5rem 3rem;
+  }
+}
+
+.page__portfolio-list {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.page__portfolio-listItem {
+  padding-left: 1em;
+  position: relative;
+}
+
+.page__portfolio-listItem::before {
+  content: "・";
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+.page__portfolio-listItem.myWork::before {
+  content: "○";
+  left: -.5rem;
+}
+
+.page__portfolio-notes {
+  font-size: 1.4rem;
 }
 
 /*====================================================================

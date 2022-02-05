@@ -1,0 +1,89 @@
+//- META INFORMATION
+- const page_title = '美容師コミュニティサイト'
+- const relativePath = '..'
+- const meta_title = '美容師コミュニティサイト'
+- const meta_description = 'Emi Nihonyanagi Portfolioサイト　美容師コミュニティサイトの案件内容'
+- const currentPage = 'portfolio'
+- const fvTitle = '美容師コミュニティサイト'
+- const fvText = '新規構築案件'
+
+
+//- EXTERNAL LIBRARIES
+- const isJquery = true
+- const isWowEffects = true
+- const isPolyfill = true
+
+doctype html
+html(lang="ja")
+    head
+        //- HEAD
+        include ../_inc/_head.pug
+    body(class=`${currentPage}`)#top
+        div(ontouchstart="")
+            include ../_inc/_siteHeader.pug
+
+            //- FV
+            include ../_inc/_pageFv.pug
+
+            //- MAIN CONTENT
+            main.main
+                section.page__portfolio
+                    .page__portfolio-detail.container
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 案件の概要
+                            p.main__text #{fvTitle} <br>#{fvText}
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 担当範囲
+                            ul.page__portfolio-list
+                                li.page__portfolio-listItem ディレクター
+                                li.page__portfolio-listItem HTML/CSS/JavaScript コーディング
+                                li.page__portfolio-listItem マニュアル作成
+                                li.page__portfolio-listItem バックエンド、指示出し等の進行管理
+                                li.page__portfolio-listItem デバッグ作業
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 案件の機能
+                            .page__portfolio-box
+                                ul.page__portfolio-list
+                                    -
+                                        let portfolio_listItem = [
+                                                {work: "", text: "会員登録"},
+                                                {work: "", text: "メール配信機能"},
+                                                {work: "", text: "ユーザーログイン"},
+                                                {work: "", text: "商品管理システム"},
+                                                {work: "", text: "売上計算機能"},
+                                                {work: "", text: "管理画面・ユーザー専用ページ"},
+
+                                            ];
+                                    each item in portfolio_listItem
+                                        if (item.work == "myWork")
+                                            li.page__portfolio-listItem(class=`${item.work}`) #{item.text}
+                                        else
+                                            li.page__portfolio-listItem(class=`${item.work}`) #{item.text}
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 技術
+                            p.main__text HTML/CSS/javascript/Laravel/NuxtJS
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 規模
+                            p.main__text 150ページ
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP チーム体制
+                            ul.page__portfolio-list
+                                li.page__portfolio-listItem ディレクション兼コーダー 1名
+                                li.page__portfolio-listItem フロントエンドエンジニア（NuxtJS） 1名
+                                li.page__portfolio-listItem バッグエンド（Laravel） 1名
+                                li.page__portfolio-listItem インフラ 1名
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 案件で工夫した点・難しかった点
+                            .page__portfolio-box
+                                p.main__text システム案件のディレクターとして初めて担当し、動作確認を行う際に、売上計算機能・メール配信機能・ユーザー毎に異なる情報が表示される仕組みを確認する事が確認工程の奥深さを感じました。
+                                p.main__text また、フロント側のコーディングを行なっている際に、バッグエンドとの連携を考慮し作成したつもりでしたが、後から手直しが必要なる箇所が多々あり、コンポーネント単位で管理する重要性を多く感じました。
+                                p.main__text この案件を経験することにより、バッグエンドとのやり取りで指示出しを行う際に、ユーザー情報、ブラウザ、OS、再現時の情報共有する事により不具合の解決方法に余分な工数を削減できるようになりました。
+
+            //- FOOTER
+            include ../_inc/_siteFooter.pug

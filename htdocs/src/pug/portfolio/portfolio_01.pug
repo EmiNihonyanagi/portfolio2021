@@ -1,0 +1,96 @@
+//- META INFORMATION
+- const page_title = '銀行サイト'
+- const relativePath = '..'
+- const meta_title = '銀行サイト'
+- const meta_description = 'Emi Nihonyanagi Portfolioサイト　銀行サイトの案件内容'
+- const currentPage = 'portfolio'
+- const fvTitle = '銀行のコーポレートサイト'
+- const fvText = 'リニューアル案件'
+
+
+//- EXTERNAL LIBRARIES
+- const isJquery = true
+- const isWowEffects = true
+- const isPolyfill = true
+
+doctype html
+html(lang="ja")
+    head
+        //- HEAD
+        include ../_inc/_head.pug
+    body(class=`${currentPage}`)#top
+        div(ontouchstart="")
+            include ../_inc/_siteHeader.pug
+
+            //- FV
+            include ../_inc/_pageFv.pug
+
+            //- MAIN CONTENT
+            main.main
+                section.page__portfolio
+                    .page__portfolio-detail.container
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 案件の概要
+                            p.main__text #{fvTitle} <br>#{fvText}
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 担当範囲
+                            ul.page__portfolio-list
+                                li.page__portfolio-listItem WordPress新規テーマ構築
+                                li.page__portfolio-listItem 脆弱性対応
+                                li.page__portfolio-listItem インフラ、バックエンド、外注先への指示出し等の進行管理
+                                li.page__portfolio-listItem デバッグ作業
+                                li.page__portfolio-listItem ディレクター補佐
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 案件の機能
+                            .page__portfolio-box
+                                ul.page__portfolio-list
+                                    -
+                                        let portfolio_listItem = [
+                                                {work: "", text: "WordPress→HTML変換"},
+                                                {work: "", text: "WordPress用のサーバーと、本番サーバー間の同期処理"},
+                                                {work: "myWork", text: "IPアドレス制限"},
+                                                {work: "", text: "独自のグループ権限構築"},
+                                                {work: "myWork", text: "寄稿者、編集者グループの承認フロー"},
+                                                {work: "", text: "REST API連携"},
+                                                {work: "myWork", text: "デフォルトのメール機能カスタマイズ"},
+                                                {work: "myWork", text: "全投稿内容をAdvanced Custom Fieldsの柔軟コンテンツで構築"},
+                                                {work: "myWork", text: "予約投稿、上書き予約投稿"},
+                                                {work: "myWork", text: "デフォルトのメール機能カスタマイズ"},
+                                                {work: "myWork", text: "プラグインを最小限に開発"},
+                                                {work: "myWork", text: "メディアはS3に保管"},
+                                                {work: "myWork", text: "内部SEO対策"},
+
+                                            ];
+                                    each item in portfolio_listItem
+                                        if (item.work == "myWork")
+                                            li.page__portfolio-listItem(class=`${item.work}`) #{item.text}
+                                        else
+                                            li.page__portfolio-listItem(class=`${item.work}`) #{item.text}
+                            p.page__portfolio-notes ※ ○がついている箇所が担当箇所です。
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 技術
+                            p.main__text HTML/CSS/javascript/WordPress
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 規模
+                            p.main__text 150ページ
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP チーム体制
+                            ul.page__portfolio-list
+                                li.page__portfolio-listItem ディレクター 1名
+                                li.page__portfolio-listItem プロジェクトマネージャー兼コーダー 1名
+                                li.page__portfolio-listItem バッグエンド 2名
+                                li.page__portfolio-listItem インフラ 1名
+
+                        .page__portfolio-detailItem.wow.fadeInUp(data-wow-duration="1s" data-wow-delay="0.4s")
+                            h2.main__titleJP 案件で工夫した点・難しかった点
+                            .page__portfolio-box
+                                p.main__text 3回のPhase分けで公開を行う際に、<br>新サイトに旧サイトのHTMLファイルと、動的なWordPressから生成されたHTMLファイルをサーバー間で同期処理を行うため、同期処理が正しく行われない場合もあり動作確認作業が大変複雑でした。<br>クライアント、作業担当者で、密にやり取りを行い週2回MTGを行いながらお互いの認識をすり合わせながら作業を行いました。
+                                p.main__text サーバーのメモリ不足、プラグイン「Advanced Custom Fields」の投稿内容の上限、権限グループ、WordPressのデフォルト機能のメールのカスタマイズ・urlの文字数制限など体験しなくては、知り得なかった事をたくさん学ばせていただいた案件でした。
+
+            //- FOOTER
+            include ../_inc/_siteFooter.pug

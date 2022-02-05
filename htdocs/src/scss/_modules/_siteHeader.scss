@@ -33,13 +33,17 @@ siteHeader
     &.is-open {
       &::before {
         transition: all .6s;
-        transform: scale(12);
-        -webkit-transform: scale(12);
-        -moz-transform: scale(12);
-        -ms-transform: scale(12);
-        -o-transform: scale(12);
+        transform: scale(13);
+        -webkit-transform: scale(13);
+        -moz-transform: scale(13);
+        -ms-transform: scale(13);
+        -o-transform: scale(13);
         @include u-mqMin {
-          transform: scale(10);
+          transform: scale(11);
+          -webkit-transform: scale(11);
+          -moz-transform: scale(11);
+          -ms-transform: scale(11);
+          -o-transform: scale(11);
         }
       }
     }
@@ -128,6 +132,9 @@ siteHeader
       }
       &:nth-child(5) {
         animation-delay: 0.8s;
+      }
+      &:nth-child(6) {
+        animation-delay: 1s;
       }
     }
     a {
