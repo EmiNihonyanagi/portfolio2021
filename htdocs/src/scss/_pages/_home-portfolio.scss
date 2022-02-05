@@ -66,19 +66,37 @@ home__portfolio
     z-index: 1;
     border-radius: 50%;
     opacity: 0;
+
     @include u-trs;
     @include u-mqMin {
       height: 10rem;
     }
-    .home__portfolio-areaItem:hover & {
-      opacity: 1;
-      border-radius: 0;
-      @include u-trs;
-      color: $black;
-      text-decoration: none;
-      width: 100%;
-      backdrop-filter: blur(8px);
+    @media (hover: hover) {
+      .home__portfolio-areaItem:hover & {
+        opacity: 1;
+        border-radius: 0;
+
+        @include u-trs;
+        color: $black;
+        text-decoration: none;
+        width: 100%;
+        backdrop-filter: blur(8px);
+      }
+      @media (hover: none) {
+        .home__portfolio-areaItem:active & {
+          opacity: 1;
+          border-radius: 0;
+
+          @include u-trs;
+          color: $black;
+          text-decoration: none;
+          width: 100%;
+          backdrop-filter: blur(8px);
+        }
+
+      }
     }
+
 
   }
   &-areaLabel {
