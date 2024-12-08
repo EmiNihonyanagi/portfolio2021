@@ -4,18 +4,19 @@
   "description": "--- # emi nihonyanagi Portfolio Site --- url : https://portfolio.twowillowsdesign.com/",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve",
-    "pug": "pug src --out dist --pretty --silent --exclude src/pug/_inc/**",
+    "pug": "pug src/pug --out dist --pretty --basedir src/pug",
     "sass": "sass --style=compressed --watch src/_assets/scss/style.scss:dist/_assets/css/style.css",
     "build": "webpack-dev-server",
     "build-sass": "sass --style=compressed --watch src/_assets/scss/style.scss:dist/_assets/css/style.css",
-    "run-build": "npm run sass &  webpack --watch"
+    "run-build": "npm-run-all --parallel sass pug build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^3.0.3",
     "gulp": "^5.0.0",
+    "npm-run-all": "^4.1.5",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   },

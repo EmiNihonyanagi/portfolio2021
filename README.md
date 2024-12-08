@@ -1,4 +1,9 @@
-## 開発環境
+# emi nihonyanagi Portfolio Site
+https://portfolio.twowillowsdesign.com/
+
+Basic認証
+* id: twd
+* pw: test
 
 ### 必須
 
@@ -12,9 +17,6 @@
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
----
-# emi nihonyanagi Portfolio Site
-| http://localhost:3030 | Webサイト |
 ---
 
 ```sh
@@ -33,7 +35,7 @@ npm install pug-cli -g
 npm install --save-dev webpack webpack-cli pug pug-loader html-webpack-plugin
 ```
 
-webpack-dev-serverを使用する場合
+### webpack-dev-serverを使用する場合
 ```sh
 npm install --save-dev webpack-dev-server
 ```
@@ -41,9 +43,8 @@ npm install --save-dev webpack-dev-server
 ```sh
 npm install sass
 ```
+### npmスクリプト並列に実行
 
-url : https://portfolio.twowillowsdesign.com/
-
-Basic認証
-* id: twd
-* pw: test
+```sh
+npm install npm-run-all --save-dev
+```
