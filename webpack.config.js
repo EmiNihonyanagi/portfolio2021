@@ -15,7 +15,7 @@ module.exports = {
     static: {
         directory: path.join(__dirname, 'dist'), // 出力先ディレクトリ
     },
-    port: 3000, // ローカルサーバーのポート番号
+    port: 4000, // ローカルサーバーのポート番号
     open: true, // ブラウザを自動で開く
     hot: true, // ホットリロード
     compress: true, // Gzip圧縮

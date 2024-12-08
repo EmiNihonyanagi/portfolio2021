@@ -35,7 +35,7 @@ npm install pug-cli -g
 npm install --save-dev webpack webpack-cli pug pug-loader html-webpack-plugin
 ```
 
-webpack-dev-serverを使用する場合
+### webpack-dev-serverを使用する場合
 ```sh
 npm install --save-dev webpack-dev-server
 ```
@@ -43,7 +43,8 @@ npm install --save-dev webpack-dev-server
 ```sh
 npm install sass
 ```
-### Browsersyncインストール
+### npmスクリプト並列に実行
+
 ```sh
-npm install browser-sync -D
+npm install npm-run-all --save-dev
 ```

@@ -209,7 +209,6 @@ $RECYCLE.BIN/
 /public/**/wp-content/updraft/*.gz
 /public/**/wp-content/updraft/*.text
 /public/**/wp-content/updraft/uploads-old
-/public/**/wp-content/themes/template.group/assets/image/index/animation
 /vendor
-!/public/**/dist
+# !/public/**/dist
 !/public/**/wp-content/plugins/wp-mail-smtp-pro/**/logs
