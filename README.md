@@ -1,4 +1,9 @@
-## 開発環境
+# emi nihonyanagi Portfolio Site
+https://portfolio.twowillowsdesign.com/
+
+Basic認証
+* id: twd
+* pw: test
 
 ### 必須
 
@@ -12,9 +17,6 @@
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
----
-# emi nihonyanagi Portfolio Site
-| http://localhost:3030 | Webサイト |
 ---
 
 ```sh
@@ -41,9 +43,7 @@ npm install --save-dev webpack-dev-server
 ```sh
 npm install sass
 ```
-
-url : https://portfolio.twowillowsdesign.com/
-
-Basic認証
-* id: twd
-* pw: test
+### Browsersyncインストール
+```sh
+npm install browser-sync -D
+```
