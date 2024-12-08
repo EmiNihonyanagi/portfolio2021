@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   mode: 'development', // development → sourcemap, production → minify
 
@@ -6,10 +8,17 @@ module.exports = {
 
   // ファイルの出力設定
   output: {
-    //  出力ファイルのディレクトリ名
-    path: `${__dirname}/dist/_assets/js`,
-    // 出力ファイル名
     filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'), // pathモジュールを使って出力先を指定
+  },
+  devServer: {
+    static: {
+        directory: path.join(__dirname, 'dist'), // 出力先ディレクトリ
+    },
+    port: 3000, // ローカルサーバーのポート番号
+    open: true, // ブラウザを自動で開く
+    hot: true, // ホットリロード
+    compress: true, // Gzip圧縮
   },
 
   module: {
