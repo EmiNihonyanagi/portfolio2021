@@ -1,0 +1,16 @@
+{
+  "name": "portfolio2021",
+  "version": "1.0.0",
+  "description": "--- # emi nihonyanagi Portfolio Site --- url : https://portfolio.twowillowsdesign.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-pug": "^5.0.0"
+  }
+}
